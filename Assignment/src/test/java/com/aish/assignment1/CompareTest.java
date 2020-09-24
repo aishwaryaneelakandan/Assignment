@@ -30,7 +30,16 @@ class CompareTest {
 		Compare s=new Compare();
 		assertTrue(s.equals("Hello", "hello"));
 	}
-	
+	@Test
+	void teste() {
+		Compare s=new Compare();
+		assertTrue(s.even(2));
+	}
+	@Test
+	void testf() {
+		Compare s=new Compare();
+		assertTrue(s.odd(7));
+	}
 }
 
 

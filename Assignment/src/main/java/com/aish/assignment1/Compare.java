@@ -20,4 +20,27 @@ public class Compare
 	    	return false;
 	    }
 	}
-}
+    public boolean isequal(String str1,String str2){
+    	if(str1==str2) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    }
+    public boolean equals(String str1,String str2){
+    	boolean bool=str1.equalsIgnoreCase(str2);
+    	if(bool) {
+    		return true;
+    	}
+    	else {
+    		return false;
+    	}
+    	
+    }
+    
+        
+    } 
+
+
+

@@ -12,13 +12,28 @@ class CompareTest {
 		Compare s=new Compare();
 		assertTrue(s.negative(-100));
 	}
-	
 	@Test
 	void testequal() {
 		
 		Compare s=new Compare();
 		assertTrue(s.equal(2, 2));
 	}
-
+	@Test
+	void testc() {
+		
+		Compare s=new Compare();
+		assertTrue(s.isequal("hello", "hello"));
+	}
+	
+	@Test
+	void testd() {
+		Compare s=new Compare();
+		assertTrue(s.equals("Hello", "hello"));
+	}
+	
 }
+
+
+
+
 

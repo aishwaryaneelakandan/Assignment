@@ -40,6 +40,16 @@ class CompareTest {
 		Compare s=new Compare();
 		assertTrue(s.odd(7));
 	}
+	@Test
+	void testg() {
+		Compare s=new Compare();
+		assertTrue(s.palindrome("lol"));
+	}
+	@Test
+	void testh() {
+		Compare s=new Compare();
+		assertTrue(s.isStringOnlyAlphabet("mango"));
+	}
 }
 
 

@@ -103,4 +103,27 @@ public class Compare
 		}
 		return n;
 	}
+
+	public boolean has271(int[] number) {
+		for (int a = 0; a < number.length - 2; a++) {
+			int c = number[a];
+			int b = number[a + 2];
+			if (number[a + 1] == c + 5 && (Math.abs(b - c + 1) <= 2))
+				return true;
+		}
+		return false;
+	}
+
+	public String altPairs(String str) {
+		String result = "";
+		for (int i = 0; i < str.length(); i += 4) {
+			int lim = i + 2;
+			if (lim > str.length()) {
+				lim = str.length();
+			}
+			result += str.substring(i, lim);
+		}
+		return result;
+	}
+
 }

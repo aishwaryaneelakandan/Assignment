@@ -14,13 +14,13 @@ class CompareTest {
 
 	@Test
 	void testequal() {
-        Compare s = new Compare();
+		Compare s = new Compare();
 		assertTrue(s.equal(2, 2));
 	}
 
 	@Test
 	void testc() {
-        Compare s = new Compare();
+		Compare s = new Compare();
 		assertTrue(s.isequal("hello", "hello"));
 	}
 
@@ -76,9 +76,9 @@ class CompareTest {
 		int a[] = { 1, 1, 2, 3, 1 };
 		int b[] = { 1, 1, 2, 4, 1 };
 		int c[] = { 1, 1, 2, 1, 2, 3 };
-		assertEquals(s.array123(a),"{1,1,2,3,1}");
-		assertEquals(s.array123(b),"{1,1,2,4,1}");
-		assertEquals(s.array123(c),"{1,1,2,1,2,3}");
+		assertTrue(s.array123(a));
+		assertTrue(s.array123(b));
+		assertTrue(s.array123(c));
 	}
 
 	@Test
@@ -88,4 +88,24 @@ class CompareTest {
 		assertEquals(s.stringSplosion("abc"), "aababc");
 		assertEquals(s.stringSplosion("ab"), "aab");
 	}
+
+	@Test
+	void testm() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 7, 1 };
+		int b[] = { 1, 2, 8, 1 };
+		int c[] = { 2, 7, 1 };
+		assertTrue(s.has271(a));
+		assertTrue(s.has271(b));
+		assertTrue(s.has271(c));
+	}
+
+	@Test
+	void testn() {
+		Compare s = new Compare();
+		assertEquals(s.altPairs("kitten"), "kien");
+		assertEquals(s.altPairs("chocolate"), "chole");
+		assertEquals(s.altPairs("CodingHorror"), "Congrr");
+	}
+
 }

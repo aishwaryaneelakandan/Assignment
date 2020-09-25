@@ -50,7 +50,21 @@ class CompareTest {
 		Compare s=new Compare();
 		assertTrue(s.isStringOnlyAlphabet("mango"));
 	}
-}
+	@Test
+	void testi() {
+		Compare s=new Compare();
+		assertNotNull(s.stringTimes("Hi", 2));
+		assertNotNull(s.stringTimes("Hi", 3));
+		assertNotNull(s.stringTimes("Hi", 1));
+	}
+	@Test
+	void testj() {
+		Compare s=new Compare();
+		assertNotNull(s.frontTimes("Computer", 2));
+		assertNotNull(s.frontTimes("Computer", 3));
+		assertNotNull(s.frontTimes("Ram", 3));
+	}
+	}
 
 
 

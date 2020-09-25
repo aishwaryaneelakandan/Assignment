@@ -73,7 +73,25 @@ public class Compare
                 && (str != null) 
                 && (str.matches("^[a-zA-Z]*$")));
     }
- } 
+    public String stringTimes(String str, int n) {
+    	String abc="";
+    	for (int i=0;i<n; i++){
+    	abc=abc+str;
+    	}
+    	return abc;
+    	}
+    public String frontTimes(String str, int n) {
+    	String def="";
+    	for(int m=0;m<n;m++){
+    	if(str.length()>=3)
+    		def=str;
+    	if(str.length()>3)
+    		def=str.substring(0,3);
+    	}
+    	return def;
+    	}
+ }
+
 
 
 

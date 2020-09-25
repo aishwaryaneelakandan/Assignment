@@ -76,9 +76,9 @@ class CompareTest {
 		int a[] = { 1, 1, 2, 3, 1 };
 		int b[] = { 1, 1, 2, 4, 1 };
 		int c[] = { 1, 1, 2, 1, 2, 3 };
-		assertTrue(s.array123(a));
-		assertTrue(s.array123(b));
-		assertTrue(s.array123(c));
+		assertEquals(s.array123(a),"{1,1,2,3,1}");
+		assertEquals(s.array123(b),"{1,1,2,4,1}");
+		assertEquals(s.array123(c),"{1,1,2,1,2,3}");
 	}
 
 	@Test

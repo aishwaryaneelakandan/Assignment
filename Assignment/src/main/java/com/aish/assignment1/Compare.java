@@ -152,4 +152,33 @@ public class Compare {
 		}
 		return 0;
 	}
+
+	public int array667(int[] nums) {
+		int count = 0;
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == 6) {
+				if (nums[i + 1] == 6 || nums[i + 1] == 7)
+					count++;
+			}
+		}
+		return count;
+	}
+
+	public boolean noTriples(int[] nums) {
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (i + 2 <= nums.length - 1) {
+				if (nums[i] == nums[i + 1] && nums[i] == nums[i + 2])
+					return false;
+			}
+		}
+		return true;
+	}
+
+	public String notString(String str) {
+		if (str.startsWith("not"))
+			return str;
+		else
+			return "not " + str;
+	}
+
 }

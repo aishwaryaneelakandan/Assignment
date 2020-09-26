@@ -77,9 +77,9 @@ class CompareTest {
 		int a[] = { 1, 1, 2, 3, 1 };
 		int b[] = { 1, 1, 2, 4, 1 };
 		int c[] = { 1, 1, 2, 1, 2, 3 };
-		assertEquals(s.array123(a),true);
-		assertEquals(s.array123(b),false);
-		assertEquals(s.array123(c),true);
+		assertEquals(s.array123(a), true);
+		assertEquals(s.array123(b), false);
+		assertEquals(s.array123(c), true);
 	}
 
 	@Test
@@ -96,9 +96,9 @@ class CompareTest {
 		int a[] = { 1, 2, 7, 1 };
 		int b[] = { 1, 2, 8, 1 };
 		int c[] = { 2, 7, 1 };
-		assertEquals(s.has271(a),true);
-		assertEquals(s.has271(b),false);
-		assertEquals(s.has271(c),true);
+		assertEquals(s.has271(a), true);
+		assertEquals(s.has271(b), false);
+		assertEquals(s.has271(c), true);
 	}
 
 	@Test
@@ -134,5 +134,35 @@ class CompareTest {
 		assertEquals(s.diff21(19), 2);
 		assertEquals(s.diff21(10), 11);
 		assertEquals(s.diff21(21), 0);
+	}
+
+	@Test
+	void testr() {
+		Compare s = new Compare();
+		int a[] = { 6, 6, 2 };
+		int b[] = { 6, 6, 2, 6 };
+		int c[] = { 6, 7, 2, 6 };
+		assertEquals(s.array667(a), 1);
+		assertEquals(s.array667(b), 1);
+		assertEquals(s.array667(c), 1);
+	}
+
+	@Test
+	void tests() {
+		Compare s = new Compare();
+		int a[] = { 1, 1, 2, 2, 1 };
+		int b[] = { 1, 1, 2, 2, 2, 1 };
+		int c[] = { 1, 1, 1, 2, 2, 2, 1 };
+		assertEquals(s.noTriples(a), true);
+		assertEquals(s.noTriples(b), false);
+		assertEquals(s.noTriples(c), false);
+	}
+
+	@Test
+	void testt() {
+		Compare s = new Compare();
+		assertEquals(s.notString("candy"), "not candy");
+		assertEquals(s.notString("x"), "not x");
+		assertEquals(s.notString("not bad"), "not bad");
 	}
 }

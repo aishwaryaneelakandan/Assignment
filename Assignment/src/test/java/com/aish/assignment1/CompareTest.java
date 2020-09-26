@@ -165,4 +165,31 @@ class CompareTest {
 		assertEquals(s.notString("x"), "not x");
 		assertEquals(s.notString("not bad"), "not bad");
 	}
+
+	@Test
+	void testu() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 9, 3, 4 };
+		int b[] = { 1, 2, 3, 4, 9 };
+		int c[] = { 1, 2, 3, 4, 5, };
+		assertEquals(s.arrayFront9(a), true);
+		assertEquals(s.arrayFront9(b), false);
+		assertEquals(s.arrayFront9(c), false);
+	}
+
+	@Test
+	void testv() {
+		Compare s = new Compare();
+		assertEquals(s.endUp("Hello"), "HeLLO");
+		assertEquals(s.endUp("hi there"), "hi thERE");
+		assertEquals(s.endUp("hi"), "HI");
+	}
+
+	@Test
+	void testw() {
+		Compare s = new Compare();
+		assertEquals(s.missingChar("kitten", 1), "ktten");
+		assertEquals(s.missingChar("kitten", 0), "itten");
+		assertEquals(s.missingChar("kitten", 4), "kittn");
+	}
 }

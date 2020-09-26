@@ -10,6 +10,7 @@ class CompareTest {
 	void testa() {
 		Compare s = new Compare();
 		assertTrue(s.negative(-100));
+		assertFalse(s.negative(100));
 	}
 
 	@Test
@@ -76,9 +77,9 @@ class CompareTest {
 		int a[] = { 1, 1, 2, 3, 1 };
 		int b[] = { 1, 1, 2, 4, 1 };
 		int c[] = { 1, 1, 2, 1, 2, 3 };
-		assertTrue(s.array123(a));
-		assertTrue(s.array123(b));
-		assertTrue(s.array123(c));
+		assertEquals(s.array123(a),true);
+		assertEquals(s.array123(b),false);
+		assertEquals(s.array123(c),true);
 	}
 
 	@Test
@@ -95,9 +96,9 @@ class CompareTest {
 		int a[] = { 1, 2, 7, 1 };
 		int b[] = { 1, 2, 8, 1 };
 		int c[] = { 2, 7, 1 };
-		assertTrue(s.has271(a));
-		assertTrue(s.has271(b));
-		assertTrue(s.has271(c));
+		assertEquals(s.has271(a),true);
+		assertEquals(s.has271(b),false);
+		assertEquals(s.has271(c),true);
 	}
 
 	@Test
@@ -108,4 +109,30 @@ class CompareTest {
 		assertEquals(s.altPairs("CodingHorror"), "Congrr");
 	}
 
+	@Test
+	void testo() {
+		Compare s = new Compare();
+		assertEquals(s.countXX("abcxx"), 1);
+		assertEquals(s.countXX("xxx"), 2);
+		assertEquals(s.countXX("xxxx"), 3);
+	}
+
+	@Test
+	void testp() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 9 };
+		int b[] = { 1, 9, 9 };
+		int c[] = { 1, 9, 9, 3, 9 };
+		assertEquals(s.arrayCount9(a), 1);
+		assertEquals(s.arrayCount9(b), 2);
+		assertEquals(s.arrayCount9(c), 3);
+	}
+
+	@Test
+	void testq() {
+		Compare s = new Compare();
+		assertEquals(s.diff21(19), 2);
+		assertEquals(s.diff21(10), 11);
+		assertEquals(s.diff21(21), 0);
+	}
 }

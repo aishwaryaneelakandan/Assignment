@@ -1,6 +1,6 @@
 package com.aish.assignment1;
-public class Compare 
-{
+
+public class Compare {
 	public boolean negative(int a) {
 		if (a < 0) {
 			return true;
@@ -18,7 +18,7 @@ public class Compare
 	}
 
 	public boolean isequal(String str1, String str2) {
-		if (str1 == str2) {
+		if (str1.equals(str2)) {
 			return true;
 		} else {
 			return false;
@@ -126,4 +126,30 @@ public class Compare
 		return result;
 	}
 
+	public int countXX(String str) {
+		int count = 0;
+		for (int i = 0; i < str.length() - 1; i++) {
+			if (str.charAt(i) == 'x' && str.charAt(i + 1) == 'x')
+				count++;
+		}
+		return count;
+	}
+
+	public int arrayCount9(int[] nums) {
+		int count = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 9)
+				count++;
+		}
+		return count;
+	}
+
+	public int diff21(int n) {
+		if (n <= 21) {
+			return 21 - n;
+		} else if (n > 21) {
+			return ((n - 21) * 2);
+		}
+		return 0;
+	}
 }

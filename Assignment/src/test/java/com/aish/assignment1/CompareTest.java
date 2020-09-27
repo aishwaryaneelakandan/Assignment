@@ -275,4 +275,43 @@ class CompareTest {
 		assertEquals(s.repeatFront("Chocolate", 3), "ChoChC");
 		assertEquals(s.repeatFront("Chocolate", 2), "ChC");
 	}
+	@Test
+	void testh1() {
+		Compare s = new Compare();
+		assertEquals(s.xyzMiddle("AAxyzBB"), true);
+		assertEquals(s.xyzMiddle("AxyzBB"), true);
+		assertEquals(s.xyzMiddle("AxyzBBB"), false);
+	}
+
+	@Test
+	void testi1() {
+		Compare s = new Compare();
+		assertEquals(s.oneTwo("abc"), "bca");
+		assertEquals(s.oneTwo("tca"), "cat");
+		assertEquals(s.oneTwo("tcagdo"), "catdog");
+	}
+
+	@Test
+	void testj1() {
+		Compare s = new Compare();
+		assertEquals(s.plusOut("12xy34", "xy"), "++xy++");
+		assertEquals(s.plusOut("12xy34", "1"), "1+++++");
+		assertEquals(s.plusOut("12xy34xyabcxy", "xy"), "++xy++xy+++xy");
+	}
+
+	@Test
+	void testk1() {
+		Compare s = new Compare();
+		assertEquals(s.catDog("catdog"), true);
+		assertEquals(s.catDog("catcat"), false);
+		assertEquals(s.catDog("1cat1cadodog"), true);
+	}
+
+	@Test
+	void testl1() {
+		Compare s = new Compare();
+		assertEquals(s.xyzThere("abcxyz"), true);
+		assertEquals(s.xyzThere("abc.xyz"), false);
+		assertEquals(s.xyzThere("xyz.abc"), true);
+	}
 }

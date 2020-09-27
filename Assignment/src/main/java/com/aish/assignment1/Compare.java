@@ -341,4 +341,82 @@ public class Compare {
 		return result;
 	}
 
+	public boolean xyzMiddle(String str) {
+		String xyz = "xyz";
+		int len = str.length();
+		int middle = len / 2;
+		if (len < 3)
+			return false;
+		if (len % 2 != 0) {
+			if (xyz.equals(str.substring(middle - 1, middle + 2))) {
+				return true;
+			} else {
+				return false;
+			}
+		} else if (xyz.equals(str.substring(middle - 1, middle + 2))
+				|| xyz.equals(str.substring(middle - 2, middle + 1))) {
+			return true;
+		} else
+			return false;
+	}
+
+	public String oneTwo(String str) {
+		String result = "";
+		for (int i = 0; i < str.length() - 2; i += 3) {
+			result = result + str.substring(i + 1, i + 3) + str.charAt(i);
+		}
+		return result;
+	}
+
+	public String plusOut(String str, String word) {
+		int slen = str.length();
+		int wlen = word.length();
+		String fin = "";
+		for (int i = 0; i < slen; i++) {
+			if (i <= slen - wlen) {
+				String tmp = str.substring(i, i + wlen);
+				if (tmp.equals(word)) {
+					fin += word;
+					i += wlen - 1;
+				} else
+					fin += "+";
+			} else
+				fin += "+";
+		}
+		return fin;
+	}
+
+	public boolean catDog(String str) {
+		int len = str.length();
+		int cat = 0;
+		int dog = 0;
+		for (int i = 0; i < len - 2; i++) {
+			String temp = str.substring(i, i + 3);
+			if (temp.compareTo("cat") == 0)
+				cat++;
+			if (temp.compareTo("dog") == 0)
+				dog++;
+		}
+		if (cat == dog)
+			return true;
+		else
+			return false;
+	}
+
+	public Boolean xyzThere(String str) {
+		int len = str.length();
+		String xyz = "xyz";
+		Boolean match = false;
+		if (len < 3)
+			return false;
+		for (int i = 0; i < len - 2; i++) {
+			String temp = str.substring(i, i + 3);
+			if (temp.compareTo(xyz) == 0 && i == 0)
+				match = true;
+			else if (temp.compareTo(xyz) == 0 && str.charAt(i - 1) != 46)
+				match = true;
+		}
+		return match;
+	}
+
 }

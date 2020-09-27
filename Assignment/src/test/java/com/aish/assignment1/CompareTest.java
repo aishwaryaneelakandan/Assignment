@@ -232,4 +232,47 @@ class CompareTest {
 		assertEquals(s.prefixAgain("abXYabc", 2), true);
 		assertEquals(s.prefixAgain("abXYabc", 3), false);
 	}
+
+	@Test
+	void testc1() {
+		Compare s = new Compare();
+		assertEquals(s.sameStarChar("*xy*yzz"), true);
+		assertEquals(s.sameStarChar("xy*zzz"), false);
+		assertEquals(s.sameStarChar("*xa*az"), true);
+	}
+
+	 @Test
+	void testd1() {
+		Compare s = new Compare();
+		String x1="ab*cd";
+		String x2="ab**cd";
+		String x3="sm*eilly";
+		assertEquals(s.starOut(x1), "ad");
+		assertEquals(s.starOut(x2), "ad");
+		assertEquals(s.starOut(x3), "silly");
+	}
+
+	@Test
+	void teste1() {
+		Compare s = new Compare();
+		assertEquals(s.endOther("Hiabc", "abc"), true);
+		assertEquals(s.endOther("Abc", "HiaBc"), true);
+		assertEquals(s.endOther("abc", "abXabc"), true);
+	}
+
+	@Test
+	void testf1() {
+		Compare s = new Compare();
+		assertEquals(s.xyBalance("aaxbby"), true);
+		assertEquals(s.xyBalance("aaxbb"), false);
+		assertEquals(s.xyBalance("yaaxbb"), false);
+	}
+
+	@Test
+	void testg1() {
+		Compare s = new Compare();
+		assertEquals(s.repeatFront("Chocolate", 4), "ChocChoChC");
+		assertEquals(s.repeatFront("Chocolate", 3), "ChoChC");
+		assertEquals(s.repeatFront("Chocolate", 2), "ChC");
+	}
 }

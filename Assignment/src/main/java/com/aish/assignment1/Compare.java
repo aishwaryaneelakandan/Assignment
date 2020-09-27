@@ -269,5 +269,76 @@ public class Compare {
 		return false;
 	}
 
-	
+	public boolean sameStarChar(String str) {
+		for (int i = 1; i < str.length() - 1; i++) {
+			if (str.charAt(i) == '*' && str.charAt(i - 1) != str.charAt(i + 1))
+				return false;
+		}
+
+		return true;
+	}
+
+	public String starOut(String str) {
+		int len = str.length();
+		String finalString = "";
+		for (int i = 0; i < len; i++) {
+			if (i == 0 && str.charAt(i) != '*')
+				finalString += str.charAt(i);
+			if (i > 0 && str.charAt(i) != '*' && str.charAt(i - 1) != '*')
+				finalString += str.charAt(i);
+			if (i > 0 && str.charAt(i) == '*' && str.charAt(i - 1) != '*')
+				finalString = finalString.substring(0, finalString.length() - 1);
+		}
+		return finalString;
+	}
+
+	public boolean endOther(String a, String b) {
+		a = a.toLowerCase();
+		int aLen = a.length();
+		b = b.toLowerCase();
+		int bLen = b.length();
+		if (aLen < bLen) {
+			String temp = b.substring(bLen - aLen, bLen);
+			if (temp.compareTo(a) == 0)
+				return true;
+			else
+				return false;
+		} else {
+			String temp = a.substring(aLen - bLen, aLen);
+			if (temp.compareTo(b) == 0)
+				return true;
+			else
+				return false;
+		}
+	}
+
+	public boolean xyBalance(String str) {
+		Boolean x = false;
+		Boolean y = false;
+		int len = str.length();
+		for (int i = 0; i < len; i++) {
+			if (str.charAt(i) == 'x' && y == true) {
+				x = true;
+				y = false;
+			} else if (str.charAt(i) == 'x') {
+				x = true;
+			}
+			if (str.charAt(i) == 'y' && x == true)
+				y = true;
+		}
+		if (x == false)
+			y = true;
+		return y;
+	}
+
+	public String repeatFront(String str, int n) {
+		String result = "";
+		if (n == 0 || n <= str.length()) {
+			for (int i = n; i > 0; i--) {
+				result += str.substring(0, i);
+			}
+		}
+		return result;
+	}
+
 }

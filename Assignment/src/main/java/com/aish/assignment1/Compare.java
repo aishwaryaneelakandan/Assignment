@@ -215,4 +215,59 @@ public class Compare {
 		return str.substring(0, n) + str.substring(n + 1, str.length());
 	}
 
+	public String doubleChar(String str) {
+		String a = "";
+		for (int i = 0; i <= str.length() - 1; i++) {
+			a += str.charAt(i);
+			a += str.charAt(i);
+		}
+		return a;
+	}
+
+	public int countCode(String str) {
+		int len = str.length();
+		int count = 0;
+		String co = "co";
+		String e = "e";
+		if (len < 4)
+			return 0;
+		for (int i = 0; i < len - 3; i++) {
+			if (co.compareTo(str.substring(i, i + 2)) == 0 && e.compareTo(str.substring(i + 3, i + 4)) == 0)
+				count++;
+		}
+		return count;
+	}
+
+	public boolean bobThere(String str) {
+		for (int i = 0; i < str.length(); i++) {
+			if (i + 2 > str.length() - 1)
+				continue;
+			else if (str.charAt(i) == 'b' && str.charAt(i + 2) == 'b')
+				return true;
+		}
+		return false;
+	}
+
+	public String repeatEnd(String str, int n) {
+		int len = str.length();
+		String newWord = "";
+		for (int i = 0; i < n; i++) {
+			newWord += str.substring(len - n, len);
+		}
+		return newWord;
+	}
+
+	public boolean prefixAgain(String str, int n) {
+		int len = str.length();
+		String prefix = str.substring(0, n);
+		for (int i = n; i < len; i++) {
+			if (n + i <= len) {
+				if (prefix.equals(str.substring(i, n + i)))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	
 }

@@ -192,4 +192,44 @@ class CompareTest {
 		assertEquals(s.missingChar("kitten", 0), "itten");
 		assertEquals(s.missingChar("kitten", 4), "kittn");
 	}
+
+	@Test
+	void testx() {
+		Compare s = new Compare();
+		assertEquals(s.doubleChar("The"), "TThhee");
+		assertEquals(s.doubleChar("AAbb"), "AAAAbbbb");
+		assertEquals(s.doubleChar("Hi-There"), "HHii--TThheerree");
+	}
+
+	@Test
+	void testy() {
+		Compare s = new Compare();
+		assertEquals(s.countCode("aaacodebbb"), 1);
+		assertEquals(s.countCode("codexxcode"), 2);
+		assertEquals(s.countCode("cozexxcope"), 2);
+	}
+
+	@Test
+	void testz() {
+		Compare s = new Compare();
+		assertEquals(s.bobThere("abcbob"), true);
+		assertEquals(s.bobThere("b9b"), true);
+		assertEquals(s.countCode("bac"), 0);
+	}
+
+	@Test
+	void testa1() {
+		Compare s = new Compare();
+		assertEquals(s.repeatEnd("Hello", 3), "llollollo");
+		assertEquals(s.repeatEnd("Hello", 2), "lolo");
+		assertEquals(s.repeatEnd("Hello", 1), "o");
+	}
+
+	@Test
+	void testb1() {
+		Compare s = new Compare();
+		assertEquals(s.prefixAgain("abXYabc", 1), true);
+		assertEquals(s.prefixAgain("abXYabc", 2), true);
+		assertEquals(s.prefixAgain("abXYabc", 3), false);
+	}
 }

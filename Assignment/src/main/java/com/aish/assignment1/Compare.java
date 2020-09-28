@@ -419,4 +419,79 @@ public class Compare {
 		return match;
 	}
 
+	public String mixString(String a, String b) {
+		int aLen = a.length();
+		int bLen = b.length();
+		int max = Math.max(aLen, bLen);
+		String word = "";
+		for (int i = 0; i < max; i++) {
+			if (i <= aLen - 1)
+				word += a.substring(i, i + 1);
+			if (i <= bLen - 1)
+				word += b.substring(i, i + 1);
+		}
+		return word;
+	}
+
+	public String repeatSeparator(String word, String sep, int count) {
+		String newWord = "";
+		for (int i = 0; i < count; i++) {
+			if (i < count - 1)
+				newWord += word + sep;
+			else
+				newWord += word;
+		}
+		return newWord;
+	}
+
+	public String getSandwich(String str) {
+		int len = str.length();
+		String tmpString = "";
+		String finalString = "";
+		int start = 0;
+		int finish = 0;
+		boolean found = false;
+		if (len <= 10)
+			return "";
+		for (int i = 0; i < len - 4; i++) {
+			tmpString = str.substring(i, i + 5);
+			if (tmpString.equals("bread") && found == true)
+				finish = i;
+			if (tmpString.equals("bread") && found == false) {
+				start = i + 5;
+				found = true;
+			}
+		}
+		finalString = str.substring(start, finish);
+		return finalString;
+	}
+
+	public String zipZap(String str) {
+		int len = str.length();
+		String finalString = "";
+		for (int i = 0; i < len; i++) {
+			finalString += str.substring(i, i + 1);
+			if (i > 0 && i < len - 1) {
+				if (str.charAt(i - 1) == 'z' && str.charAt(i + 1) == 'p')
+					finalString = finalString.substring(0, finalString.length() - 1);
+			}
+		}
+		return finalString;
+	}
+
+	public String wordEnds(String str, String word) {
+		int slen = str.length();
+		int wlen = word.length();
+		String fin = "";
+		for (int i = 0; i < slen - wlen + 1; i++) {
+			String tmp = str.substring(i, i + wlen);
+			if (i > 0 && tmp.equals(word))
+				fin += str.substring(i - 1, i);
+			if (i < slen - wlen && tmp.equals(word))
+				fin += str.substring(i + wlen, i + wlen + 1);
+		}
+		return fin;
+	}
+
+	
 }

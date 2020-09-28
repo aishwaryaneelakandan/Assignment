@@ -241,12 +241,12 @@ class CompareTest {
 		assertEquals(s.sameStarChar("*xa*az"), true);
 	}
 
-	 @Test
+	@Test
 	void testd1() {
 		Compare s = new Compare();
-		String x1="ab*cd";
-		String x2="ab**cd";
-		String x3="sm*eilly";
+		String x1 = "ab*cd";
+		String x2 = "ab**cd";
+		String x3 = "sm*eilly";
 		assertEquals(s.starOut(x1), "ad");
 		assertEquals(s.starOut(x2), "ad");
 		assertEquals(s.starOut(x3), "silly");
@@ -275,6 +275,7 @@ class CompareTest {
 		assertEquals(s.repeatFront("Chocolate", 3), "ChoChC");
 		assertEquals(s.repeatFront("Chocolate", 2), "ChC");
 	}
+
 	@Test
 	void testh1() {
 		Compare s = new Compare();
@@ -314,4 +315,46 @@ class CompareTest {
 		assertEquals(s.xyzThere("abc.xyz"), false);
 		assertEquals(s.xyzThere("xyz.abc"), true);
 	}
+
+	@Test
+	void testm1() {
+		Compare s = new Compare();
+		assertEquals(s.mixString("abc", "xyz"), "axbycz");
+		assertEquals(s.mixString("Hi", "There"), "HTihere");
+		assertEquals(s.mixString("xxxx", "There"), "xTxhxexre");
+	}
+
+	@Test
+	void testn1() {
+		Compare s = new Compare();
+		assertEquals(s.repeatSeparator("Word", "X", 3), "WordXWordXWord");
+		assertEquals(s.repeatSeparator("This", "And", 2), "ThisAndThis");
+		assertEquals(s.repeatSeparator("This", "And", 1), "This");
+	}
+
+	@Test
+	void testo1() {
+		Compare s = new Compare();
+		assertEquals(s.getSandwich("breadjambread"), "jam");
+		assertEquals(s.getSandwich("xxbreadjambreadyy"), "jam");
+		assertEquals(s.getSandwich("xxbreadyy"), "");
+	}
+
+	@Test
+	void testp1() {
+		Compare s = new Compare();
+		assertEquals(s.zipZap("zipXzap"), "zpXzp");
+		assertEquals(s.zipZap("zopzop"), "zpzp");
+		assertEquals(s.zipZap("zzzopzop"), "zzzpzp");
+	}
+
+	@Test
+	void testq1() {
+		Compare s = new Compare();
+		assertEquals(s.wordEnds("abcXY123XYijk", "XY"), "c13i");
+		assertEquals(s.wordEnds("XY123XY", "XY"), "13");
+		assertEquals(s.wordEnds("XY1XY", "XY"), "11");
+	}
+
+	
 }

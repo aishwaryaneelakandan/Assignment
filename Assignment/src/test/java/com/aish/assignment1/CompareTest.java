@@ -355,6 +355,60 @@ class CompareTest {
 		assertEquals(s.wordEnds("XY123XY", "XY"), "13");
 		assertEquals(s.wordEnds("XY1XY", "XY"), "11");
 	}
+	@Test
+	void testw1() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 2, 3, 5 };
+		int c[] = { 1, 2, 1 };
+		assertEquals(s.fix23(a), "{1,2,0}");
+		assertEquals(s.fix23(b), "{2,0,5}");
+		assertEquals(s.fix23(c), "{1,2,1}");
+	}
+
+	@Test
+	void testx1() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3, 4 };
+		int b[] = { 7, 1, 2, 3, 4, 9 };
+		int c[] = { 1, 2 };
+		assertEquals(s.makeMiddle(a), "{2,3}");
+		assertEquals(s.makeMiddle(b), "{2,3}");
+		assertEquals(s.makeMiddle(c), "{1,2}");
+	}
+
+	@Test
+	void testy1() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3, 4, 5 };
+		int b[] = { 8, 6, 7, 5, 3, 0, 9 };
+		int c[] = { 1, 2, 3 };
+		assertEquals(s.midThree(a), "(2,3,4)");
+		assertEquals(s.midThree(b), "(7,5,3)");
+		assertEquals(s.midThree(c), "(1,2,3)");
+	}
+
+	@Test
+	void testz1() {
+		Compare s = new Compare();
+		int a[] = { 1, 3, 4, 5 };
+		int b[] = { 2, 1, 3, 4, 5 };
+		int c[] = { 1, 1, 1 };
+		assertEquals(s.unlucky1(a), true);
+		assertEquals(s.unlucky1(b), true);
+		assertEquals(s.unlucky1(c), false);
+	}
+
+	@Test
+	void testa2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 2, 3, 1 };
+		int c[] = { 1, 2, 1 };
+		assertEquals(s.sameFirstLast(a), false);
+		assertEquals(s.sameFirstLast(b), true);
+		assertEquals(s.sameFirstLast(c), true);
+	}
 
 	
 }

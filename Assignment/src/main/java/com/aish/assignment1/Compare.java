@@ -492,6 +492,43 @@ public class Compare {
 		}
 		return fin;
 	}
+	public int[] fix23(int[] nums) {
+		if (nums[0] == 2 && nums[1] == 3)
+			nums[1] = 0;
+		if (nums[1] == 2 && nums[2] == 3)
+			nums[2] = 0;
+		return new int[] { nums[0], nums[1], nums[2] };
+	}
 
+	public int[] makeMiddle(int[] nums) {
+		return new int[] { nums[nums.length / 2 - 1], nums[nums.length / 2] };
+	}
+
+	public int[] midThree(int[] nums) {
+		int[] myArray = new int[3];
+		int middle = nums.length / 2;
+		myArray[0] = nums[middle - 1];
+		myArray[1] = nums[middle];
+		myArray[2] = nums[middle + 1];
+		return myArray;
+	}
+
+	public boolean unlucky1(int[] nums) {
+		if (nums.length < 2) {
+			return false;
+		} else if ((nums[0] == 1 && nums[1] == 3) || (nums[nums.length - 2] == 1 && nums[nums.length - 1] == 3)) {
+			return true;
+		} else if (nums.length > 2 && nums[1] == 1 && nums[2] == 3) {
+			return true;
+		} else
+			return false;
+	}
+
+	public boolean sameFirstLast(int[] nums) {
+		if (nums.length > 0 && nums[0] == nums[nums.length - 1])
+			return true;
+		else
+			return false;
+	}
 	
 }

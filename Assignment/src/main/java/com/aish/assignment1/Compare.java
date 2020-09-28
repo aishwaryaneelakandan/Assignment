@@ -492,6 +492,34 @@ public class Compare {
 		}
 		return fin;
 	}
+
+	public boolean firstLast6(int[] nums) {
+		if (nums[0] == 6 || nums[nums.length - 1] == 6)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean commonEnd(int[] a, int[] b) {
+		return (a[0] == b[0] || a[a.length - 1] == b[b.length - 1]);
+	}
+
+	public int[] reverse3(int[] nums) {
+		int[] myArray = new int[3];
+		myArray[0] = nums[2];
+		myArray[1] = nums[1];
+		myArray[2] = nums[0];
+		return myArray;
+	}
+
+	public int[] middleWay(int[] a, int[] b) {
+		return new int[] { a[1], b[1] };
+	}
+
+	public boolean no23(int[] nums) {
+		return (nums[0] != 2 && nums[1] != 3 && nums[1] != 2 && nums[0] != 3);
+	}
+
 	public int[] fix23(int[] nums) {
 		if (nums[0] == 2 && nums[1] == 3)
 			nums[1] = 0;
@@ -530,5 +558,5 @@ public class Compare {
 		else
 			return false;
 	}
-	
+
 }

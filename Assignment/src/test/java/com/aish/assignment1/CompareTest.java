@@ -361,9 +361,9 @@ class CompareTest {
 		int a[] = { 1, 2, 3 };
 		int b[] = { 2, 3, 5 };
 		int c[] = { 1, 2, 1 };
-		assertEquals(s.fix23(a), "{1,2,0}");
-		assertEquals(s.fix23(b), "{2,0,5}");
-		assertEquals(s.fix23(c), "{1,2,1}");
+		assertArrayEquals(new int[] {1,2,0}, s.fix23(a));
+		assertArrayEquals(new int[] {2,0,5} ,s.fix23(b) );
+		assertArrayEquals(new int[] {1,2,1}, s.fix23(c));
 	}
 
 	@Test
@@ -372,9 +372,9 @@ class CompareTest {
 		int a[] = { 1, 2, 3, 4 };
 		int b[] = { 7, 1, 2, 3, 4, 9 };
 		int c[] = { 1, 2 };
-		assertEquals(s.makeMiddle(a), "{2,3}");
-		assertEquals(s.makeMiddle(b), "{2,3}");
-		assertEquals(s.makeMiddle(c), "{1,2}");
+		assertArrayEquals(new int[] {2,3}, s.makeMiddle(a));
+		assertArrayEquals(new int[] {2,3}, s.makeMiddle(b));
+		assertArrayEquals(new int[] {1,2},s.makeMiddle(c));;
 	}
 
 	@Test
@@ -383,9 +383,9 @@ class CompareTest {
 		int a[] = { 1, 2, 3, 4, 5 };
 		int b[] = { 8, 6, 7, 5, 3, 0, 9 };
 		int c[] = { 1, 2, 3 };
-		assertEquals(s.midThree(a), "(2,3,4)");
-		assertEquals(s.midThree(b), "(7,5,3)");
-		assertEquals(s.midThree(c), "(1,2,3)");
+		assertArrayEquals(new int[] {2,3,4},s.midThree(a));
+		assertArrayEquals(new int[] {7,5,3},s.midThree(b));
+		assertArrayEquals(new int[] {1,2,3},s.midThree(c));
 	}
 
 	@Test

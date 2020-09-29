@@ -559,4 +559,48 @@ public class Compare {
 			return false;
 	}
 
+	public int sum3(int[] nums) {
+		return nums[0] + nums[1] + nums[2];
+	}
+
+	public int[] maxEnd3(int[] nums) {
+		int larger = Math.max(nums[0], nums[2]);
+		nums[0] = larger;
+		nums[1] = larger;
+		nums[2] = larger;
+		return nums;
+	}
+
+	public int[] makeEnds(int[] nums) {
+		int[] myArray = new int[2];
+		if (nums.length == 1) {
+			myArray[0] = nums[0];
+			myArray[1] = nums[0];
+		} else {
+			myArray[0] = nums[0];
+			myArray[1] = nums[nums.length - 1];
+		}
+		return myArray;
+	}
+
+	public int[] makeLast(int[] nums) {
+		int len = nums.length;
+		int[] myArray = new int[2 * len];
+		myArray[myArray.length - 1] = nums[len - 1];
+		return myArray;
+	}
+
+	public int start1(int[] a, int[] b) {
+		int count = 0;
+		if (a.length != 0) {
+			if (a[0] == 1)
+				count++;
+		}
+		if (b.length != 0) {
+			if (b[0] == 1)
+				count++;
+		}
+		return count;
+	}
 }
+	

@@ -472,4 +472,62 @@ class CompareTest {
 		assertEquals(s.sameFirstLast(b), true);
 		assertEquals(s.sameFirstLast(c), true);
 	}
+
+	@Test
+	void testb2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 5, 11, 2 };
+		int c[] = { 7, 0, 0 };
+		assertEquals(s.sum3(a), 6);
+		assertEquals(s.sum3(b), 18);
+		assertEquals(s.sum3(c), 7);
+	}
+
+	@Test
+	void testc2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 11, 5, 9 };
+		int c[] = { 2, 11, 3 };
+		assertArrayEquals(new int[] { 3, 3, 3 }, s.maxEnd3(a));
+		assertArrayEquals(new int[] { 11, 11, 11 }, s.maxEnd3(b));
+		assertArrayEquals(new int[] { 3, 3, 3 }, s.maxEnd3(c));
+	}
+
+	@Test
+	void testd2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 2, 3, 4 };
+		int c[] = { 7, 4, 6, 2 };
+		assertArrayEquals(new int[] { 1, 3 }, s.makeEnds(a));
+		assertArrayEquals(new int[] { 1, 4 }, s.makeEnds(b));
+		assertArrayEquals(new int[] { 7, 2 }, s.makeEnds(c));
+	}
+
+	@Test
+	void teste2() {
+		Compare s = new Compare();
+		int a[] = { 4, 5, 6 };
+		int b[] = { 1, 2 };
+		int c[] = { 3 };
+		assertArrayEquals(new int[] { 0, 0, 0, 0, 0, 6 }, s.makeLast(a));
+		assertArrayEquals(new int[] { 0, 0, 0, 2 }, s.makeLast(b));
+		assertArrayEquals(new int[] { 0, 3 }, s.makeLast(c));
+	}
+
+	@Test
+	void testf2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 3 };
+		int a1[] = { 7, 2, 3 };
+		int b1[] = { 1 };
+		int a2[] = { 1, 2 };
+		int b2[] = {};
+		assertEquals(s.start1(a, b), 2);
+		assertEquals(s.start1(a1, b1), 1);
+		assertEquals(s.start1(a2, b2), 1);
+	}
 }

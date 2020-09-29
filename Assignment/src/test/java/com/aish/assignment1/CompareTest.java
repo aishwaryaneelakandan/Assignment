@@ -530,4 +530,60 @@ class CompareTest {
 		assertEquals(s.start1(a1, b1), 1);
 		assertEquals(s.start1(a2, b2), 1);
 	}
+
+	@Test
+	void testg2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2 };
+		int b[] = { 3, 4 };
+		int a1[] = { 4, 4 };
+		int b1[] = { 2, 2 };
+		int a2[] = { 9, 2 };
+		int b2[] = { 3, 4 };
+		assertArrayEquals(new int[] { 1, 2, 3, 4 }, s.plusTwo(a, b));
+		assertArrayEquals(new int[] { 4, 4, 2, 2 }, s.plusTwo(a1, b1));
+		assertArrayEquals(new int[] { 9, 2, 3, 4 }, s.plusTwo(a2, b2));
+	}
+
+	@Test
+	void testh2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 5, 3 };
+		int c[] = { 5, 2, 3 };
+		assertEquals(s.maxTriple(a), 3);
+		assertEquals(s.maxTriple(b), 5);
+		assertEquals(s.maxTriple(c), 5);
+	}
+
+	@Test
+	void testi2() {
+		Compare s = new Compare();
+		int a[] = { 4, 5 };
+		int b[] = { 1, 2, 3 };
+		int a1[] = { 4 };
+		int b1[] = { 1, 2, 3 };
+		int a2[] = {};
+		int b2[] = { 1, 2 };
+		assertArrayEquals(new int[] { 4, 5 }, s.make2(a, b));
+		assertArrayEquals(new int[] { 4, 1 }, s.make2(a1, b1));
+		assertArrayEquals(new int[] { 1, 2 }, s.make2(a2, b2));
+	}
+
+	@Test
+	void testj2() {
+		Compare s = new Compare();
+		assertArrayEquals(new int[] { 3, 1, 4 }, s.makePi());
+	}
+
+	@Test
+	void testk2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 5, 11, 9 };
+		int c[] = { 7, 0, 0 };
+		assertArrayEquals(new int[] { 2, 3, 1 }, s.rotateLeft3(a));
+		assertArrayEquals(new int[] { 11, 9, 5 }, s.rotateLeft3(b));
+		assertArrayEquals(new int[] { 0, 0, 7 }, s.rotateLeft3(c));
+	}
 }

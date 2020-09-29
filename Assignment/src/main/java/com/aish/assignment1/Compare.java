@@ -602,5 +602,51 @@ public class Compare {
 		}
 		return count;
 	}
+
+	public int[] plusTwo(int[] a, int[] b) {
+		int[] myArray = new int[4];
+		myArray[0] = a[0];
+		myArray[1] = a[1];
+		myArray[2] = b[0];
+		myArray[3] = b[1];
+		return myArray;
+	}
+
+	public int maxTriple(int[] nums) {
+		int result = 0;
+		int a = nums[0];
+		int b = nums[((nums.length + 1) / 2) - 1];
+		int c = nums[nums.length - 1];
+		if (a > b && a > c)
+			result = a;
+		if (b > a && b > c)
+			result = b;
+		if (c > a && c > b)
+			result = c;
+		return result;
+	}
+
+	public int[] make2(int[] a, int[] b) {
+		int[] temp = new int[2];
+		int index = 0;
+		for (int i = 0; i < a.length; i++)
+			if (index < 2) {
+				temp[index] = a[i];
+				index++;
+			}
+		for (int i = 0; i < b.length; i++)
+			if (index < 2) {
+				temp[index] = b[i];
+				index++;
+			}
+		return temp;
+	}
+
+	public int[] makePi() {
+		return new int[] { 3, 1, 4 };
+	}
+
+	public int[] rotateLeft3(int[] nums) {
+		return new int[] { nums[1], nums[2], nums[0] };
+	}
 }
-	

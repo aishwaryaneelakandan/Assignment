@@ -586,4 +586,62 @@ class CompareTest {
 		assertArrayEquals(new int[] { 11, 9, 5 }, s.rotateLeft3(b));
 		assertArrayEquals(new int[] { 0, 0, 7 }, s.rotateLeft3(c));
 	}
+
+	@Test
+	void testl2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 1 };
+		int c[] = { 1, 1, 1, 1 };
+		assertEquals(s.sum2(a), 3);
+		assertEquals(s.sum2(b), 2);
+		assertEquals(s.sum2(c), 2);
+	}
+
+	@Test
+	void testm2() {
+		Compare s = new Compare();
+		int a[] = { 2, 5 };
+		int b[] = { 4, 3 };
+		int c[] = { 4, 5 };
+		assertEquals(s.has23(a), true);
+		assertEquals(s.has23(b), true);
+		assertEquals(s.has23(c), false);
+	}
+
+	@Test
+	void testn2() {
+		Compare s = new Compare();
+		int a[] = { 2, 2 };
+		int b[] = { 3, 3 };
+		int c[] = { 2, 3 };
+		assertEquals(s.double23(a), true);
+		assertEquals(s.double23(b), true);
+		assertEquals(s.double23(c), false);
+	}
+
+	@Test
+	void testo2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2 };
+		int b[] = { 3, 4 };
+		int a1[] = { 3, 4 };
+		int b1[] = { 1, 2 };
+		int a2[] = { 1, 1 };
+		int b2[] = { 1, 2 };
+		assertArrayEquals(new int[] { 3, 4 }, s.biggerTwo(a, b));
+		assertArrayEquals(new int[] { 3, 4 }, s.biggerTwo(a1, b1));
+		assertArrayEquals(new int[] { 1, 2 }, s.biggerTwo(a2, b2));
+	}
+
+	@Test
+	void testp2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3, 4 };
+		int b[] = { 1, 2, 3 };
+		int c[] = { 8, 6, 7, 9, 5 };
+		assertArrayEquals(new int[] { 4, 2, 3, 1 }, s.swapEnds(a));
+		assertArrayEquals(new int[] { 3, 2, 1 }, s.swapEnds(b));
+		assertArrayEquals(new int[] { 5, 6, 7, 9, 8 }, s.swapEnds(c));
+	}
 }

@@ -649,4 +649,42 @@ public class Compare {
 	public int[] rotateLeft3(int[] nums) {
 		return new int[] { nums[1], nums[2], nums[0] };
 	}
+
+	public int sum2(int[] nums) {
+		if (nums.length == 1)
+			return nums[0];
+		else if (nums.length == 0)
+			return 0;
+		else
+			return nums[0] + nums[1];
+	}
+
+	public boolean has23(int[] nums) {
+		if (nums[0] == 2 || nums[0] == 3 || nums[1] == 2 || nums[1] == 3)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean double23(int[] nums) {
+		if (nums.length != 1 && nums.length != 0)
+			return ((nums[0] == 2 && nums[1] == 2) || (nums[0] == 3 && nums[1] == 3));
+		else
+			return false;
+	}
+
+	public int[] biggerTwo(int[] a, int[] b) {
+		if (b[1] + b[0] > a[1] + a[0])
+			return b;
+		else
+			return a;
+	}
+
+	public int[] swapEnds(int[] nums) {
+		int a = nums[0];
+		int b = nums[nums.length - 1];
+		nums[0] = b;
+		nums[nums.length - 1] = a;
+		return nums;
+	}
 }

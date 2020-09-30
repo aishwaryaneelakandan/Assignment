@@ -836,4 +836,78 @@ public class Compare {
 		}
 		return result;
 	}
+
+	public boolean equalIsNot(String str) {
+		int len = str.length();
+		int not = 0;
+		int is = 0;
+		for (int i = 0; i < len; i++) {
+			if (i < len - 2) {
+				String tmp = str.substring(i, i + 3);
+				if (tmp.equals("not"))
+					not++;
+			}
+			if (i < len - 1) {
+				String tmp2 = str.substring(i, i + 2);
+				if (tmp2.equals("is"))
+					is++;
+			}
+		}
+		if (not == is)
+			return true;
+		else
+			return false;
+	}
+
+	public int sumDigits(String str) {
+		int len = str.length();
+		int sum = 0;
+		for (int i = 0; i < len; i++) {
+			if (Character.isDigit(str.charAt(i))) {
+				String tmp = str.substring(i, i + 1);
+				sum += Integer.parseInt(tmp);
+			}
+		}
+		return sum;
+	}
+
+	public int maxBlock(String str) {
+		int len = str.length();
+		int count = 0;
+		int tmpcount = 1;
+		if (len == 0)
+			return 0;
+		for (int i = 0; i < len; i++) {
+			if (i < len - 1 && str.charAt(i) == str.charAt(i + 1))
+				tmpcount++;
+			else
+				tmpcount = 1;
+			if (tmpcount > count)
+				count = tmpcount;
+		}
+		return count;
+	}
+
+	public int countEvens(int[] nums) {
+		int count = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % 2 == 0)
+				count++;
+		}
+		return count;
+	}
+
+	public int sum13(int[] nums) {
+		int sum = 0;
+
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 13) {
+				sum += nums[i];
+				if (i > 0 && nums[i - 1] == 13)
+					sum -= nums[i];
+			}
+		}
+		return sum;
+	}
+
 }

@@ -733,5 +733,49 @@ class CompareTest {
 		assertEquals(s.notReplace("is-is"), "is not-is not");
 		assertEquals(s.notReplace("This is right"), "This is not right");
 	}
+	@Test
+	void testa3() {
+		Compare s = new Compare();
+		assertEquals(s.equalIsNot("This is not"), false);
+		assertEquals(s.equalIsNot("This is notnot"), true);
+		assertEquals(s.equalIsNot("noisxxnotyynotxisi"), true);
+	}
 
+	@Test
+	void testb3() {
+		Compare s = new Compare();
+		assertEquals(s.sumDigits("aa1bc2d3"), 6);
+		assertEquals(s.sumDigits("aa11b33"), 8);
+		assertEquals(s.sumDigits("Chocolate"), 0);
+	}
+
+	@Test
+	void testc3() {
+		Compare s = new Compare();
+		assertEquals(s.maxBlock("hoopla"), 2);
+		assertEquals(s.maxBlock("abbCCCddBBBxx"), 3);
+		assertEquals(s.maxBlock(""), 0);
+	}
+
+	@Test
+	void testd3() {
+		Compare s = new Compare();
+		int a[] = { 2, 1, 2, 3, 4 };
+		int b[] = { 2, 2, 0 };
+		int c[] = { 1, 3, 5 };
+		assertEquals(s.countEvens(a), 3);
+		assertEquals(s.countEvens(b), 3);
+		assertEquals(s.countEvens(c), 0);
+	}
+
+	@Test
+	void teste3() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 2, 1 };
+		int b[] = { 1, 1 };
+		int c[] = { 1, 2, 2, 1, 13 };
+		assertEquals(s.sum13(a), 6);
+		assertEquals(s.sum13(b), 2);
+		assertEquals(s.sum13(c), 6);
+	}
 }

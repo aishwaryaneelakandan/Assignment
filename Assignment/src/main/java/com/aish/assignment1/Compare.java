@@ -751,4 +751,89 @@ public class Compare {
 		}
 		return fin;
 	}
+
+	public int sumNumbers(String str) {
+		int len = str.length();
+		int sum = 0;
+		String tmp = "";
+		for (int i = 0; i < len; i++) {
+			if (Character.isDigit(str.charAt(i))) {
+				if (i < len - 1 && Character.isDigit(str.charAt(i + 1))) {
+					tmp += str.charAt(i);
+				} else {
+					tmp += str.charAt(i);
+					sum += Integer.parseInt(tmp);
+					tmp = "";
+				}
+			}
+		}
+		return sum;
+	}
+
+	public String withoutString(String base, String remove) {
+		int blen = base.length();
+		int rlen = remove.length();
+		String lowbase = base.toLowerCase();
+		String lowrem = remove.toLowerCase();
+		String fin = "";
+		for (int i = 0; i < blen; i++) {
+			if (i <= blen - rlen) {
+				String tmp = lowbase.substring(i, i + rlen);
+				if (!tmp.equals(lowrem))
+					fin += base.substring(i, i + 1);
+				else {
+					i += rlen - 1;
+				}
+			} else {
+				String tmp2 = lowbase.substring(i, i + 1);
+				if (!tmp2.equals(lowrem))
+					fin += base.substring(i, i + 1);
+			}
+		}
+		return fin;
+	}
+
+	public int countTriple(String str) {
+		int len = str.length();
+		int count = 0;
+		for (int i = 0; i < len - 2; i++) {
+			char tmp = str.charAt(i);
+			if (tmp == str.charAt(i + 1) && tmp == str.charAt(i + 2))
+				count++;
+		}
+		return count;
+	}
+
+	public String mirrorEnds(String string) {
+		int len = string.length();
+		String fin = "";
+		String tmp1 = "";
+		String tmp2 = "";
+		for (int i = 0; i < len; i++) {
+			tmp1 += string.substring(i, i + 1);
+			tmp2 = "";
+			for (int j = tmp1.length() - 1; j >= 0; j--) {
+				tmp2 += tmp1.substring(j, j + 1);
+				if (tmp2.equals(string.substring(len - i - 1, len)))
+					fin = tmp1;
+			}
+		}
+		return fin;
+	}
+
+	public String notReplace(String str) {
+		String result = "";
+		int len = str.length();
+		for (int i = 0; i < len; i++) {
+			if (i - 1 >= 0 && Character.isLetter(str.charAt(i - 1))
+					|| i + 2 < len && Character.isLetter(str.charAt(i + 2))) {
+				result += str.charAt(i);
+			} else if (i + 1 < len && str.substring(i, i + 2).equals("is")) {
+				result += "is not";
+				i++;
+			} else
+				result += str.charAt(i);
+		}
+		return result;
+	}
 }

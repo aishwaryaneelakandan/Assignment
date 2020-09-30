@@ -693,4 +693,45 @@ class CompareTest {
 		assertEquals(s.sameEnds("xx"), "x");
 		assertEquals(s.sameEnds("xxx"), "x");
 	}
+
+	@Test
+	void testv2() {
+		Compare s = new Compare();
+		assertEquals(s.sumNumbers("abc123xyz"), 123);
+		assertEquals(s.sumNumbers("aa11b33"), 44);
+		assertEquals(s.sumNumbers("7 11"), 18);
+	}
+
+	@Test
+	void testw2() {
+		Compare s = new Compare();
+		assertEquals(s.withoutString("Hello there", "llo"), "He there");
+		assertEquals(s.withoutString("Hello there", "e"), "Hllo thr");
+		assertEquals(s.withoutString("Hello there", "x"), "Hello there");
+	}
+
+	@Test
+	void testx2() {
+		Compare s = new Compare();
+		assertEquals(s.countTriple("abcXXXabc"), 1);
+		assertEquals(s.countTriple("xxxabyyyycd"), 3);
+		assertEquals(s.countTriple("a"), 0);
+	}
+
+	@Test
+	void testy2() {
+		Compare s = new Compare();
+		assertEquals(s.mirrorEnds("abXYZba"), "ab");
+		assertEquals(s.mirrorEnds("abca"), "a");
+		assertEquals(s.mirrorEnds("aba"), "aba");
+	}
+
+	@Test
+	void testz2() {
+		Compare s = new Compare();
+		assertEquals(s.notReplace("is test"), "is not test");
+		assertEquals(s.notReplace("is-is"), "is not-is not");
+		assertEquals(s.notReplace("This is right"), "This is not right");
+	}
+
 }

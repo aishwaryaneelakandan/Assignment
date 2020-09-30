@@ -644,4 +644,53 @@ class CompareTest {
 		assertArrayEquals(new int[] { 3, 2, 1 }, s.swapEnds(b));
 		assertArrayEquals(new int[] { 5, 6, 7, 9, 8 }, s.swapEnds(c));
 	}
+
+	@Test
+	void testq2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 2 };
+		int c[] = { 1 };
+		assertArrayEquals(new int[] { 1, 2 }, s.frontPiece(a));
+		assertArrayEquals(new int[] { 1, 2 }, s.frontPiece(b));
+		assertArrayEquals(new int[] { 1 }, s.frontPiece(c));
+	}
+
+	@Test
+	void testr2() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 7, 9, 8 };
+		int a1[] = { 1 };
+		int b1[] = { 2 };
+		int a2[] = { 1, 7 };
+		int b2[] = {};
+		assertArrayEquals(new int[] { 1, 7 }, s.front11(a, b));
+		assertArrayEquals(new int[] { 1, 2 }, s.front11(a1, b1));
+		assertArrayEquals(new int[] { 1 }, s.front11(a2, b2));
+	}
+
+	@Test
+	void tests2() {
+		Compare s = new Compare();
+		assertEquals(s.countYZ("fez day"), 2);
+		assertEquals(s.countYZ("day fez"), 2);
+		assertEquals(s.countYZ("day fyyyz"), 2);
+	}
+
+	@Test
+	void testt2() {
+		Compare s = new Compare();
+		assertEquals(s.gHappy("xxggxx"), true);
+		assertEquals(s.gHappy("xxgxx"), false);
+		assertEquals(s.gHappy("xxggyygxx"), false);
+	}
+
+	@Test
+	void testu2() {
+		Compare s = new Compare();
+		assertEquals(s.sameEnds("abXYab"), "ab");
+		assertEquals(s.sameEnds("xx"), "x");
+		assertEquals(s.sameEnds("xxx"), "x");
+	}
 }

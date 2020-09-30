@@ -687,4 +687,68 @@ public class Compare {
 		nums[nums.length - 1] = a;
 		return nums;
 	}
+
+	public int[] frontPiece(int[] nums) {
+		if (nums.length == 1)
+			return new int[] { nums[0] };
+		else if (nums.length == 0)
+			return new int[] {};
+		else
+			return new int[] { nums[0], nums[1] };
+	}
+
+	public int[] front11(int[] a, int[] b) {
+		if (a.length == 0 && b.length == 0)
+			return new int[] {};
+		else if (a.length != 0 && b.length == 0)
+			return new int[] { a[0] };
+		else if (a.length == 0 && b.length != 0)
+			return new int[] { b[0] };
+		else
+			return new int[] { a[0], b[0] };
+	}
+
+	public int countYZ(String str) {
+		int len = str.length();
+		int count = 0;
+		str = str.toLowerCase();
+		for (int i = 0; i < len; i++) {
+			if (str.charAt(i) == 'y' || str.charAt(i) == 'z') {
+				if (i < len - 1 && !Character.isLetter(str.charAt(i + 1)))
+					count++;
+				else if (i == len - 1)
+					count++;
+			}
+		}
+		return count;
+	}
+
+	public boolean gHappy(String str) {
+		int len = str.length();
+		boolean happy = true;
+		for (int i = 0; i < len; i++) {
+			if (str.charAt(i) == 'g') {
+				if (i > 0 && str.charAt(i - 1) == 'g')
+					happy = true;
+				else if (i < len - 1 && str.charAt(i + 1) == 'g')
+					happy = true;
+				else
+					happy = false;
+			}
+		}
+		return happy;
+	}
+
+	public String sameEnds(String string) {
+		int len = string.length();
+		String fin = "";
+		String tmp = "";
+		for (int i = 0; i < len; i++) {
+			tmp += string.charAt(i);
+			int tmplen = tmp.length();
+			if (i < len / 2 && tmp.equals(string.substring(len - tmplen, len)))
+				fin = tmp;
+		}
+		return fin;
+	}
 }

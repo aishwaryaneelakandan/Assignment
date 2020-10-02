@@ -845,4 +845,70 @@ class CompareTest {
 		assertEquals(s.sameEnds(b, 2), true);
 		assertEquals(s.sameEnds(c, 3), false);
 	}
+
+	@Test
+	void testl3() {
+		Compare s = new Compare();
+		int a[] = { 6, 2, 5, 3 };
+		int b[] = { 1, 2 };
+		int c[] = { 1 };
+		assertArrayEquals(new int[] { 2, 5, 3, 6 }, s.shiftLeft(a));
+		assertArrayEquals(new int[] { 2, 1 }, s.shiftLeft(b));
+		assertArrayEquals(new int[] { 1 }, s.shiftLeft(c));
+	}
+
+	@Test
+	void testm3() {
+		Compare s = new Compare();
+		int a[] = { 2, 4, 1, 2 };
+		int b[] = { 4, 1, 4, 2 };
+		int c[] = { 4, 4, 1, 2, 3 };
+		assertArrayEquals(new int[] { 1, 2 }, s.post4(a));
+		assertArrayEquals(new int[] { 2 }, s.post4(b));
+		assertArrayEquals(new int[] { 1, 2, 3 }, s.post4(c));
+	}
+
+	@Test
+	void testn3() {
+		Compare s = new Compare();
+		int a[] = { 1, 10, 10, 2 };
+		int b[] = { 10, 2, 10 };
+		int c[] = { 1, 99, 10 };
+		assertArrayEquals(new int[] { 1, 2, 0, 0 }, s.withoutTen(a));
+		assertArrayEquals(new int[] { 2, 0, 0 }, s.withoutTen(b));
+		assertArrayEquals(new int[] { 1, 99, 0 }, s.withoutTen(c));
+	}
+
+	@Test
+	void testo3() {
+		Compare s = new Compare();
+		int a[] = { 10, 3, 5, 6 };
+		int b[] = { 7, 2, 10, 9 };
+		int c[] = { 2, 10, 7, 2 };
+		assertEquals(s.bigDiff(a), 7);
+		assertEquals(s.bigDiff(b), 8);
+		assertEquals(s.bigDiff(c), 8);
+	}
+
+	@Test
+	void testp3() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 2 };
+		int b[] = { 1, 2, 2, 6, 99, 99, 7 };
+		int c[] = { 1, 1, 6, 7, 2 };
+		assertEquals(s.sum67(a), 5);
+		assertEquals(s.sum67(b), 5);
+		assertEquals(s.sum67(c), 4);
+	}
+
+	@Test
+	void testq3() {
+		Compare s = new Compare();
+		int a[] = { 2, 3, 2, 2, 4, 2 };
+		int b[] = { 2, 3, 2, 2, 4, 2, 2 };
+		int c[] = { 1, 2, 3, 4 };
+		assertEquals(s.sum28(a), true);
+		assertEquals(s.sum28(b), false);
+		assertEquals(s.sum28(c), false);
+	}
 }

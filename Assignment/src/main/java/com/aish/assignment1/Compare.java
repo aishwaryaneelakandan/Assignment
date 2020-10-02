@@ -966,4 +966,84 @@ public class Compare {
 				result = false;
 		return result;
 	}
+
+	public int[] shiftLeft(int[] nums) {
+		if (nums.length >= 2) {
+			int temp = nums[0];
+			for (int i = 0; i < nums.length - 1; i++)
+				nums[i] = nums[i + 1];
+			nums[nums.length - 1] = temp;
+		}
+		return nums;
+	}
+
+	public int[] post4(int[] nums) {
+		for (int i = nums.length - 1; i >= 0; i--) {
+			if (nums[i] == 4) {
+				int[] foo;
+				foo = new int[nums.length - i - 1];
+				for (int j = 0; j < foo.length; j++) {
+					foo[j] = nums[i + j + 1];
+				}
+				return foo;
+			}
+		}
+		int[] bar;
+		bar = new int[0];
+		return bar;
+	}
+
+	public int[] withoutTen(int[] nums) {
+		int[] result = new int[nums.length];
+		int j = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 10) {
+			} else {
+				result[j] = nums[i];
+				j++;
+			}
+		}
+		for (int i = j; i < nums.length; i++) {
+			result[i] = 0;
+		}
+		return result;
+	}
+
+	public int bigDiff(int[] nums) {
+		int min = nums[0];
+		int max = nums[0];
+		for (int i = 0; i < nums.length; i++) {
+			min = Math.min(min, nums[i]);
+			max = Math.max(max, nums[i]);
+		}
+		return max - min;
+	}
+
+	public int sum67(int[] nums) {
+		int sum = 0;
+		int annul7 = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 6) {
+				for (int j = i; nums[j] != 7; j++) {
+					nums[j] = 0;
+					annul7 = j;
+				}
+				nums[annul7 + 1] = 0;
+			} else
+				sum += nums[i];
+		}
+		return sum;
+	}
+
+	public boolean sum28(int[] nums) {
+		boolean result = false;
+		int sum = 0;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 2)
+				sum += 2;
+		}
+		if (sum == 8)
+			result = true;
+		return result;
+	}
 }

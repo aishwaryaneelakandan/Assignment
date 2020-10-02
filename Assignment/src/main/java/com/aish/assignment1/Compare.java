@@ -910,4 +910,60 @@ public class Compare {
 		return sum;
 	}
 
+	public boolean lucky13(int[] nums) {
+		boolean result = true;
+		for (int i = 0; i < nums.length; i++)
+			if (nums[i] == 1 || nums[i] == 3)
+				result = false;
+		return result;
+	}
+
+	public int[] fizzArray(int n) {
+		int[] arr = new int[n];
+
+		for (int i = 0; i < n; i++)
+			arr[i] = i;
+
+		return arr;
+	}
+
+	public boolean no14(int[] nums) {
+		boolean found1 = false;
+		boolean found4 = false;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] == 1)
+				found1 = true;
+			if (nums[i] == 4)
+				found4 = true;
+		}
+		if (found1 && found4)
+			return false;
+		else
+			return true;
+	}
+
+	public int matchUp(int[] nums1, int[] nums2) {
+		int count = 0;
+		for (int i = 0; i < nums1.length; i++)
+			if (Math.abs(nums1[i] - nums2[i]) == 1 || Math.abs(nums1[i] - nums2[i]) == 2)
+				count++;
+		return count;
+	}
+
+	public boolean modThree(int[] nums) {
+		for (int i = 0; i < nums.length - 2; i++) {
+			if (nums[i] % 2 == nums[i + 1] % 2 && nums[i] % 2 == nums[i + 2] % 2)
+				return true;
+		}
+		return false;
+	}
+
+	public boolean sameEnds(int[] nums, int len) {
+		boolean result = true;
+		int range = len;
+		for (int i = 0; i < range; i++)
+			if (!(nums[i] == nums[nums.length - range + i]))
+				result = false;
+		return result;
+	}
 }

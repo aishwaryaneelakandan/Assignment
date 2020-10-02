@@ -733,6 +733,7 @@ class CompareTest {
 		assertEquals(s.notReplace("is-is"), "is not-is not");
 		assertEquals(s.notReplace("This is right"), "This is not right");
 	}
+
 	@Test
 	void testa3() {
 		Compare s = new Compare();
@@ -777,5 +778,71 @@ class CompareTest {
 		assertEquals(s.sum13(a), 6);
 		assertEquals(s.sum13(b), 2);
 		assertEquals(s.sum13(c), 6);
+	}
+
+	@Test
+	void testf3() {
+		Compare s = new Compare();
+		int a[] = { 0, 2, 4 };
+		int b[] = { 1, 2, 3 };
+		int c[] = { 1, 2, 4 };
+		assertEquals(s.lucky13(a), true);
+		assertEquals(s.lucky13(b), false);
+		assertEquals(s.lucky13(c), false);
+	}
+
+	@Test
+	void testg3() {
+		Compare s = new Compare();
+		assertArrayEquals(new int[] { 0, 1, 2, 3 }, s.fizzArray(4));
+		assertArrayEquals(new int[] { 0 }, s.fizzArray(1));
+		assertArrayEquals(new int[] { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s.fizzArray(10));
+	}
+
+	@Test
+	void testh3() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 1, 2, 3, 4 };
+		int c[] = { 2, 3, 4 };
+		assertEquals(s.no14(a), true);
+		assertEquals(s.no14(b), false);
+		assertEquals(s.no14(c), true);
+	}
+
+	@Test
+	void testi3() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 3 };
+		int b[] = { 2, 3, 10 };
+		int a1[] = { 1, 2, 3 };
+		int b1[] = { 2, 3, 5 };
+		int a2[] = { 1, 2, 3 };
+		int b2[] = { 2, 3, 3 };
+		assertEquals(s.matchUp(a, b), 2);
+		assertEquals(s.matchUp(a1, b1), 3);
+		assertEquals(s.matchUp(a2, b2), 2);
+	}
+
+	@Test
+	void testj3() {
+		Compare s = new Compare();
+		int a[] = { 2, 1, 3, 5 };
+		int b[] = { 2, 1, 2, 4 };
+		int c[] = { 2, 4, 2, 5 };
+		assertEquals(s.no14(a), true);
+		assertEquals(s.no14(b), false);
+		assertEquals(s.no14(c), true);
+	}
+
+	@Test
+	void testk3() {
+		Compare s = new Compare();
+		int a[] = { 5, 6, 45, 99, 13, 5, 6 };
+		int b[] = { 5, 6, 45, 99, 13, 5, 6 };
+		int c[] = { 5, 6, 45, 99, 13, 5, 6 };
+		assertEquals(s.sameEnds(a, 1), false);
+		assertEquals(s.sameEnds(b, 2), true);
+		assertEquals(s.sameEnds(c, 3), false);
 	}
 }

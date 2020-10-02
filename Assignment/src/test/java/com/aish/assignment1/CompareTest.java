@@ -911,4 +911,71 @@ class CompareTest {
 		assertEquals(s.sum28(b), false);
 		assertEquals(s.sum28(c), false);
 	}
+
+	@Test
+	void testr3() {
+		Compare s = new Compare();
+		int a[] = { 1, 4, 1, 4 };
+		int b[] = { 1, 4, 2, 4 };
+		int c[] = { 1, 1 };
+		assertEquals(s.only14(a), true);
+		assertEquals(s.only14(b), false);
+		assertEquals(s.only14(c), true);
+	}
+
+	@Test
+	void tests3() {
+		Compare s = new Compare();
+		int a[] = { 1, 2, 1, 3 };
+		int b[] = { 1, 2, 1, 3 };
+		int c[] = { 1, 2, 1, 3, 4 };
+		assertEquals(s.isEverywhere(a, 1), true);
+		assertEquals(s.isEverywhere(b, 2), false);
+		assertEquals(s.isEverywhere(c, 1), false);
+	}
+
+	@Test
+	void testt3() {
+		Compare s = new Compare();
+		int a[] = { 1, 7, 7 };
+		int b[] = { 1, 7, 1, 7 };
+		int c[] = { 1, 7, 1, 1, 7 };
+		assertEquals(s.has77(a), true);
+		assertEquals(s.has77(b), true);
+		assertEquals(s.has77(c), false);
+	}
+
+	@Test
+	void testu3() {
+		Compare s = new Compare();
+		int a[] = { 3, 1, 3, 1, 3 };
+		int b[] = { 3, 1, 3, 3 };
+		int c[] = { 3, 4, 3, 3, 4 };
+		assertEquals(s.haveThree(a), true);
+		assertEquals(s.haveThree(b), false);
+		assertEquals(s.haveThree(c), false);
+	}
+
+	@Test
+	void testv3() {
+		Compare s = new Compare();
+		int a[] = { 1, 4, 5, 6, 2 };
+		int b[] = { 1, 2, 3 };
+		int c[] = { 1, 2, 4 };
+		assertEquals(s.tripleUp(a), true);
+		assertEquals(s.tripleUp(b), true);
+		assertEquals(s.tripleUp(c), false);
+	}
+
+	@Test
+	void testw3() {
+		Compare s = new Compare();
+		int a[] = { 2, 10, 3, 4, 20, 5 };
+		int b[] = { 10, 1, 20, 2 };
+		int c[] = { 10, 1, 9, 20 };
+		assertArrayEquals(new int[] { 2, 10, 10, 10, 20, 20 }, s.tenRun(a));
+		assertArrayEquals(new int[] { 10, 10, 20, 20 }, s.tenRun(b));
+		assertArrayEquals(new int[] { 10, 10, 10, 20 }, s.tenRun(c));
+	}
+
 }

@@ -1046,4 +1046,70 @@ public class Compare {
 			result = true;
 		return result;
 	}
+
+	public boolean only14(int[] nums) {
+		for (int i = 0; i < nums.length; i++)
+			if (nums[i] != 1 && nums[i] != 4)
+				return false;
+		return true;
+	}
+
+	public boolean isEverywhere(int[] nums, int val) {
+		boolean result = true;
+		for (int i = 0; i <= nums.length - 2; i++) {
+			if (nums[i] != val && nums[i + 1] != val)
+				result = false;
+		}
+		return result;
+	}
+
+	public boolean has77(int[] nums) {
+		for (int i = 0; i < nums.length - 1; i++) {
+			if (nums[i] == 7 && nums[i + 1] == 7)
+				return true;
+
+			if (i <= nums.length - 3 && nums[i] == 7 && nums[i + 2] == 7)
+				return true;
+		}
+
+		return false;
+	}
+
+	public boolean haveThree(int[] nums) {
+		int count = 0;
+		boolean found = false;
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] != 3)
+				found = false;
+			if (nums[i] == 3 && found == true)
+				return false;
+			if (nums[i] == 3 && found == false) {
+				found = true;
+				count++;
+			}
+		}
+		if (count == 3)
+			return true;
+		else
+			return false;
+	}
+
+	public boolean tripleUp(int[] nums) {
+		boolean result = false;
+		for (int i = 0; i < nums.length - 2; i++)
+			if ((nums[i] + 1 == nums[i + 1]) && (nums[i + 1] + 1 == nums[i + 2]))
+				result = true;
+		return result;
+	}
+
+	public int[] tenRun(int[] nums) {
+		for (int i = 0; i < nums.length; i++) {
+			if (nums[i] % 10 == 0) {
+				for (int j = i + 1; j < nums.length && !(nums[j] % 10 == 0); j++)
+					nums[j] = nums[i];
+			}
+		}
+		return nums;
+	}
+
 }

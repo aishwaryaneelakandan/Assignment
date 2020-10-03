@@ -218,4 +218,5 @@ public class CompareAgainTest {
 		assertArrayEquals(new int[] { 1, 4, 5, 1 }, s1.fix45(b));
 		assertArrayEquals(new int[] { 1, 4, 5, 1, 1, 4, 5 }, s1.fix45(c));
 	}
+
 }

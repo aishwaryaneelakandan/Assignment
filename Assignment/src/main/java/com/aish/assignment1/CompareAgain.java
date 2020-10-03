@@ -263,4 +263,97 @@ public class CompareAgain {
 		return nums;
 	}
 
+	public int[] squareUp(int n) {
+		int[] arr = new int[n * n];
+		if (n == 0)
+			return arr;
+		for (int i = n - 1; i < arr.length; i += n) {
+			for (int j = i; j >= i - i / n; j--)
+				arr[j] = i - j + 1;
+		}
+		return arr;
+	}
+
+	public int countClumps(int[] nums) {
+		int count = 0;
+		int i = 0;
+		while (i < nums.length) {
+			int val = nums[i];
+			i++;
+			int length = 1;
+			while (i < nums.length && nums[i] == val) {
+				i++;
+				length++;
+			}
+			if (length > 1)
+				count++;
+		}
+		return count;
+	}
+
+	public int factorial(int n) {
+		if (n == 1)
+			return 1;
+		return n * factorial(n - 1);
+	}
+
+	public int bunnyEars2(int bunnies) {
+		if (bunnies == 0)
+			return 0;
+		if (bunnies % 2 == 1)
+			return 2 + bunnyEars2(bunnies - 1);
+		return 3 + bunnyEars2(bunnies - 1);
+	}
+
+	public int count7(int n) {
+		if (n == 0)
+			return 0;
+		if (n % 10 == 7)
+			return 1 + count7(n / 10);
+		return count7(n / 10);
+	}
+
+	public int countX(String str) {
+		if (str.length() == 0)
+			return 0;
+		if (str.charAt(0) == 'x')
+			return 1 + countX(str.substring(1));
+		return countX(str.substring(1));
+	}
+
+	public String changePi(String str) {
+		if (str.length() < 2)
+			return str;
+		if (str.substring(0, 2).equals("pi"))
+			return "3.14" + changePi(str.substring(2));
+		return str.charAt(0) + changePi(str.substring(1));
+	}
+
+	public int array11(int[] nums, int index) {
+		if (index == nums.length)
+			return 0;
+		if (nums[index] == 11)
+			return 1 + array11(nums, index + 1);
+		return array11(nums, index + 1);
+	}
+
+	public String pairStar(String str) {
+		if (str.length() < 2)
+			return str;
+		if (str.charAt(0) == str.charAt(1))
+			return str.charAt(0) + "*" + pairStar(str.substring(1));
+		return str.charAt(0) + pairStar(str.substring(1));
+	}
+
+	public int countAbc(String str) {
+		String left;
+		if (str.length() < 3)
+			return 0;
+		left = str.substring(0, 3);
+		if (left.equals("abc"))
+			return 1 + countAbc(str.substring(3));
+		if (left.equals("aba"))
+			return 1 + countAbc(str.substring(2));
+		return countAbc(str.substring(1));
+	}
 }

@@ -219,4 +219,90 @@ public class CompareAgainTest {
 		assertArrayEquals(new int[] { 1, 4, 5, 1, 1, 4, 5 }, s1.fix45(c));
 	}
 
+	@Test
+	void testu() {
+		CompareAgain s1 = new CompareAgain();
+		assertArrayEquals(new int[] { 0, 0, 1, 0, 2, 1, 3, 2, 1 }, s1.squareUp(3));
+		assertArrayEquals(new int[] { 0, 1, 2, 1 }, s1.squareUp(2));
+		assertArrayEquals(new int[] { 0, 0, 0, 1, 0, 0, 2, 1, 0, 3, 2, 1, 4, 3, 2, 1 }, s1.squareUp(4));
+	}
+
+	@Test
+	void testv() {
+		CompareAgain s1 = new CompareAgain();
+		int a[] = { 1, 2, 2, 3, 4, 4 };
+		int b[] = { 1, 1, 2, 1, 1 };
+		int c[] = { 1, 1, 1, 1, 1 };
+		assertEquals(s1.countClumps(a), 2);
+		assertEquals(s1.countClumps(b), 2);
+		assertEquals(s1.countClumps(c), 1);
+	}
+
+	@Test
+	void testw() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.factorial(1), 1);
+		assertEquals(s1.factorial(2), 2);
+		assertEquals(s1.factorial(3), 6);
+	}
+
+	@Test
+	void testx() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.bunnyEars2(0), 0);
+		assertEquals(s1.bunnyEars2(1), 2);
+		assertEquals(s1.bunnyEars2(2), 5);
+	}
+
+	@Test
+	void testy() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.count7(717), 2);
+		assertEquals(s1.count7(7), 1);
+		assertEquals(s1.count7(123), 0);
+	}
+
+	@Test
+	void testz() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.countX("xxhixx"), 4);
+		assertEquals(s1.countX("xhixhix"), 3);
+		assertEquals(s1.countX("hi"), 0);
+	}
+
+	@Test
+	void testa1() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.changePi("xpix"), "x3.14x");
+		assertEquals(s1.changePi("pipi"), "3.143.14");
+		assertEquals(s1.changePi("pip"), "3.14p");
+	}
+
+	@Test
+	void testb1() {
+		CompareAgain s1 = new CompareAgain();
+		int a[] = { 1, 2, 11 };
+		int b[] = { 11, 11 };
+		int c[] = { 1, 2, 3, 4 };
+		assertEquals(s1.array11(a, 0), 1);
+		assertEquals(s1.array11(b, 0), 2);
+		assertEquals(s1.array11(c, 0), 0);
+	}
+
+	@Test
+	void testc1() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.pairStar("hello"), "hel*lo");
+		assertEquals(s1.pairStar("xxyy"), "x*xy*y");
+		assertEquals(s1.pairStar("aaaa"), "a*a*a*a");
+	}
+
+	@Test
+	void testd1() {
+		CompareAgain s1 = new CompareAgain();
+		assertEquals(s1.countAbc("abc"), 1);
+		assertEquals(s1.countAbc("abcxxabc"), 2);
+		assertEquals(s1.countAbc("abaxxaba"), 2);
+	}
+
 }

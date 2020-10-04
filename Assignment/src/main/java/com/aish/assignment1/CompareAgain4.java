@@ -82,4 +82,76 @@ public class CompareAgain4 {
 			return 1 + count11(str.substring(2));
 		return count11(str.substring(1));
 	}
+
+	public String parenBit(String str) {
+		if (str.charAt(0) != '(')
+			return parenBit(str.substring(1));
+		if (str.charAt(str.length() - 1) != ')')
+			return parenBit(str.substring(0, str.length() - 1));
+		return str;
+	}
+
+	public boolean strCopies(String str, String sub, int n) {
+		if (n == 0)
+			return true;
+		if (str.length() < sub.length())
+			return false;
+		if (str.substring(0, sub.length()).equals(sub))
+			return strCopies(str.substring(1), sub, n - 1);
+		return strCopies(str.substring(1), sub, n);
+	}
+
+	public int fibonacci(int n) {
+		if (n <= 1)
+			return n;
+		return fibonacci(n - 1) + fibonacci(n - 2);
+	}
+
+	public int sumDigits(int n) {
+		if (n < 10)
+			return n;
+		return ((n % 10) + (sumDigits(n / 10)));
+	}
+
+	public int powerN(int base, int n) {
+		if (n == 1)
+			return base;
+		return base * powerN(base, n - 1);
+	}
+
+	public String changeXY(String str) {
+		if (str.length() == 0)
+			return str;
+		if (str.charAt(0) == 'x')
+			return 'y' + changeXY(str.substring(1));
+		return str.charAt(0) + changeXY(str.substring(1));
+	}
+
+	public boolean array6(int[] nums, int index) {
+		if (index >= nums.length)
+			return false;
+		return nums[index] == 6 || array6(nums, index + 1);
+	}
+
+	public String allStar(String str) {
+		if (str.length() <= 1)
+			return str;
+		return str.charAt(0) + "*" + allStar(str.substring(1));
+	}
+
+	public int countPairs(String str) {
+		if (str.length() <= 2)
+			return 0;
+		if (str.charAt(0) == str.charAt(2))
+			return 1 + countPairs(str.substring(1));
+		return countPairs(str.substring(1));
+	}
+
+	public String stringClean(String str) {
+		if (str.length() <= 1)
+			return str;
+		if (str.charAt(0) == str.charAt(1))
+			return stringClean(str.substring(1));
+		return str.charAt(0) + stringClean(str.substring(1));
+	}
 }

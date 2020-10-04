@@ -171,4 +171,109 @@ class CompareAgainTest4 {
 		assertEquals(s2.stringClean("abbbcdd"), "abcd");
 		assertEquals(s2.stringClean("Hello"), "Helo");
 	}
+	@Test
+	void testu() {
+		CompareAgain4 s2 = new CompareAgain4();
+		assertEquals(s2.nestParen("(())"), true);
+		assertEquals(s2.nestParen("((()))"), true);
+		assertEquals(s2.nestParen("(((x))"), false);
+	}
+
+	@Test
+	void testv() {
+		CompareAgain4 s2 = new CompareAgain4();
+		assertEquals(s2.strDist("catcowcat", "cat"), 9);
+		assertEquals(s2.strDist("catcowcat", "cow"), 3);
+		assertEquals(s2.strDist("cccatcowcatxx", "cat"), 9);
+	}
+
+	@Test
+	void testw() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 2, 4, 8 };
+		int b[] = { 2, 4, 8 };
+		int c[] = { 2, 4, 8 };
+		assertEquals(s2.groupSum(0, a, 10), true);
+		assertEquals(s2.groupSum(0, b, 14), true);
+		assertEquals(s2.groupSum(0, c, 9), false);
+	}
+
+	@Test
+	void testx() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 2, 5, 10, 4 };
+		int b[] = { 2, 5, 10, 4 };
+		int c[] = { 2, 5, 10, 4 };
+		assertEquals(s2.groupSum5(0, a, 19), true);
+		assertEquals(s2.groupSum5(0, b, 17), true);
+		assertEquals(s2.groupSum5(0, c, 12), false);
+	}
+
+	@Test
+	void testy() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 5, 5, 5 };
+		int b[] = { 5, 5, 6 };
+		int c[] = { 5, 5, 6, 1 };
+		assertEquals(s2.splitOdd10(a), true);
+		assertEquals(s2.splitOdd10(b), false);
+		assertEquals(s2.splitOdd10(c), true);
+	}
+
+	@Test
+	void testz() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 5, 6, 2 };
+		int b[] = { 5, 6, 2 };
+		int c[] = { 5, 6, 2 };
+		assertEquals(s2.groupSum6(0, a, 8), true);
+		assertEquals(s2.groupSum6(0, b, 9), false);
+		assertEquals(s2.groupSum6(0, c, 7), false);
+	}
+
+	@Test
+	void testa1() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 2, 4, 8 };
+		int b[] = { 1, 2, 4, 8, 1 };
+		int c[] = { 2, 4, 4, 8 };
+		assertEquals(s2.groupSumClump(0, a, 10), true);
+		assertEquals(s2.groupSumClump(0, b, 14), true);
+		assertEquals(s2.groupSumClump(0, c, 14), false);
+	}
+
+	@Test
+	void testb1() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 1, 1 };
+		int b[] = { 1, 1, 1 };
+		int c[] = { 2, 4, 2 };
+		assertEquals(s2.split53(a), true);
+		assertEquals(s2.split53(b), false);
+		assertEquals(s2.split53(c), true);
+	}
+
+	@Test
+	void testc1() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 2, 5, 10, 4 };
+		int b[] = { 2, 5, 10, 4 };
+		int c[] = { 2, 5, 10, 4 };
+		assertEquals(s2.groupNoAdj(0, a, 12), true);
+		assertEquals(s2.groupNoAdj(0, b, 14), false);
+		assertEquals(s2.groupNoAdj(0, c, 7), false);
+	}
+
+	@Test
+	void testd1() {
+		CompareAgain4 s2 = new CompareAgain4();
+		int a[] = { 2, 2 };
+		int b[] = { 2, 3 };
+		int c[] = { 5, 2, 3 };
+		assertEquals(s2.splitArray(a), true);
+		assertEquals(s2.splitArray(b), false);
+		assertEquals(s2.splitArray(c), true);
+	}
+
+
 }

@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 
 class Compare1Test {
-	//@Test
+	@Test
 	void testMerge() {
 		Collect1 s4=new Collect1();
 	
-		List<String> list1 = Arrays.asList("a","b","c","d","e","a","b","c","d","e");
+		List<String> list1 = Arrays.asList("a","b","c","d","f","a","b","c","d","e");
 		assertEquals(s4.merge(),list1);
 	}
 		

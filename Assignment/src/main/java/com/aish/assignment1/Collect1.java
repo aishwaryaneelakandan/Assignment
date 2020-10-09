@@ -5,56 +5,43 @@ import java.util.Arrays;
 import java.util.List;
 
 public class Collect1 {
-	public List<String> merge() {
-		ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "f"));
-
-		ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
-
-		listOne.addAll(listTwo);
-
-		return listOne;
+	public List<String> merge(List<String> listOne,List<String> listTwo) {
+		List<String> listThree=new ArrayList<String>();
+        listThree.addAll(listOne);
+        listThree.addAll(listTwo);
+        return listThree;
 	}
 
-	public List<String> compare() {
-		ArrayList<String> listOne = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "f"));
-
-		ArrayList<String> listTwo = new ArrayList<>(Arrays.asList("a", "b", "c", "d", "e"));
-
+	public List<String> compare(List<String> listOne,List<String> listTwo) {
 		listOne.equals(listTwo);
-
 		return listOne;
 	}
 
-	public List<Integer> clear() {
-		ArrayList<Integer> arr1 = new ArrayList<>(Arrays.asList(1, 2, 3, 4));
-		arr1.clear();
-		return arr1;
+	public List<Integer> clear1(List<Integer> arr1) {
+		List<Integer> list1=new ArrayList<Integer>();
+		list1.addAll(arr1);
+		list1.clear();
+		return list1;
 	}
 
-	public List<Integer> empty1() {
-		ArrayList<Integer> list = new ArrayList<Integer>();
-		list.isEmpty();
-		list.add(1);
-		list.isEmpty();
-		list.clear();
-		list.isEmpty();
-		return list;
+	public boolean empty1(List<Integer> list) {
+		if(list.isEmpty())
+			return true;
+		else
+			return false;
 	}
 
-	public List<Integer> reverseArrayList() {
-		List<Integer> lista = new ArrayList<Integer>(Arrays.asList(1, 2, 3, 4, 5));
-		for (int i = 0; i < lista.size(); i++) {
-			lista.add(i, lista.remove(lista.size() - 1));
-		}
-		return lista;
-	}
+	public List<Integer> reverseArrayList(List<Integer> lista) {
+		 List<Integer> revArrayList = new ArrayList<Integer>(); 
+	        for (int i = lista.size() - 1; i >= 0; i--) {
+	            revArrayList.add(lista.get(i)); 
+	        }
+	        return revArrayList; 
+	    } 
+	 
+	
 
-	public List<Integer> sortArrayList() {
-		ArrayList<Integer> slist = new ArrayList<Integer>();
-		slist.add(10010);
-		slist.add(5);
-		slist.add(4);
-		slist.add(2);
+	public List<Integer> sortArrayList(List<Integer> slist) {
 		for (int i = 0; i < slist.size(); i++) {
 			for (int j = slist.size() - 1; j > i; j--) {
 				if (slist.get(i) > slist.get(j)) {
@@ -67,54 +54,33 @@ public class Collect1 {
 		return slist;
 	}
 
-	public List<Integer> searchArrayList() {
-		ArrayList<Integer> s1list = new ArrayList<Integer>();
-		s1list.add(90);
-		s1list.add(80);
-		s1list.add(70);
-		s1list.add(60);
-		s1list.add(50);
-		s1list.add(40);
-		s1list.add(30);
-		s1list.add(20);
-		s1list.get(1);
-		s1list.get(3);
-		s1list.get(5);
-		return s1list;
+	public List<Integer> searchArrayList(List<Integer> s1list,int n) {
+		List<Integer> list1=new ArrayList<Integer>();
+		List<Integer> list2=new ArrayList<Integer>();
+		list1.addAll(s1list);
+		list1.get(n);
+		list2.add(list1.get(n));
+		return list2;
 	}
 
-	public List<String> insertFirstArrayList() {
-		ArrayList<String> iflist = new ArrayList<String>();
-		iflist.add("Red");
-		iflist.add("Green");
-		iflist.add("Orange");
-		iflist.add("White");
-		iflist.add("Black");
-		iflist.add(0, "Violet");
-		return iflist;
+	public List<String> insertFirstArrayList(List<String> iflist,String a1) {
+		List<String> listOne=new ArrayList<String>();
+		listOne.add(0, a1);
+		listOne.addAll(iflist);
+		return listOne;
 	}
 
-	public List<String> updateArrayList() {
-		ArrayList<String> ulist = new ArrayList<String>();
-		ulist.add("Red");
-		ulist.add("Green");
-		ulist.add("Orange");
-		ulist.add("White");
-		ulist.add("Black");
-		ulist.set(3, "Pink");
-		return ulist;
+	public List<String> updateArrayList(List<String> ulist,String a1) {
+		List<String> listOne=new ArrayList<String>();
+		listOne.addAll(ulist);
+		listOne.set(2, a1);
+		return listOne;
 	}
 
-	public List<String> secondelementArrayList() {
-		ArrayList<String> selist = new ArrayList<String>();
-		selist.add("Red");
-		selist.add("Green");
-		String new_color = "White";
-		selist.set(1, new_color);
-		int num = selist.size();
-		for (int i = 0; i < num; i++) {
-			selist.get(i);
-		}
+	public List<String> secondelementArrayList(List<String> selist,String a1) {
+		List<String> listTwo=new ArrayList<String>();
+		listTwo.addAll(selist);
+		listTwo.set(1, a1);
 		return selist;
 	}
 }

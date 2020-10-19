@@ -11,24 +11,21 @@ public class Collect2 {
 		return list;
 	}
 
-	@SuppressWarnings("rawtypes")
-	public Object iterateall(LinkedList<String> list) {
-		for (Iterator i = list.iterator(); i.hasNext();)
+	public Object iterateall(LinkedList<Integer> list) {
+		for (Iterator<Integer> i = list.iterator(); i.hasNext();)
 			return i.next();
 		return list;
 	}
 
 	public Object iteratestarting(LinkedList<String> list) {
-		@SuppressWarnings("rawtypes")
-		Iterator p = list.listIterator(1);
+		Iterator<String> p = list.listIterator(1);
 		while (p.hasNext())
 			return p.next();
 		return list;
 	}
 
 	public Object iteratereverse(LinkedList<String> list) {
-		@SuppressWarnings("rawtypes")
-		Iterator it = list.descendingIterator();
+		Iterator<String> it = list.descendingIterator();
 		while (it.hasNext())
 			return it.next();
 		return list;

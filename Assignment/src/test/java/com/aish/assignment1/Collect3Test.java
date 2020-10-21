@@ -1,5 +1,8 @@
 package com.aish.assignment1;
+import java.util.Arrays;
 import java.util.LinkedList;
+import java.util.List;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -74,6 +77,7 @@ class Collect3Test {
 		list1.add("Green");
 		list1.add("Red");
 		assertEquals(s6.shuffle(list),list1);
+		
 	}
 	@Test
 	void Join() {
@@ -113,7 +117,7 @@ class Collect3Test {
 		Collect3 s6=new Collect3();
 		LinkedList<String> list=new LinkedList<String>();
 		LinkedList<String> list1=new LinkedList<String>();
-		assertEquals(s6.removeall(list),list1);
+		assertEquals(s6.isempty(list),list1);
 	}
 	@Test
 	void Replace() {
@@ -124,9 +128,75 @@ class Collect3Test {
 		list.add("Green");
 		list.add("Blue");
 		LinkedList<String> list1=new LinkedList<String>();
+		list1.add("Red");
 		list1.add("White");
-		list1.add("Green");
 		list1.add("Blue");
 		assertEquals(s6.replace(list, a),list1);
 	}
+	@Test
+	void Linkedlisttoarraylist() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		List<String> list1 = Arrays.asList("Red","Green","Blue");
+		assertEquals(s6.linkedlisttoarraylist(list)
+				,list1);
+	}
+	@Test
+	void ComapreLinkedlist() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		LinkedList<String> list1=new LinkedList<String>();
+		list1.add("Red");
+		list1.add("Green");
+		list1.add("Blue");
+		assertTrue(s6.comparelinkedlist(list, list1));
+	}
+@Test
+	void Contains() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		String a="Blue";
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		assertTrue(s6.elementexists(list, a));
+	}
+	@Test
+	void Retrivefirst() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		String a1="Red";
+		assertEquals(s6.retrivefirst(list),a1);
+	}
+	@Test
+	void Retrivelast() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		String a1="Blue";
+		assertEquals(s6.retrivelast(list),a1);
+	}
+	@Test
+	void Returnfirst() {
+		Collect3 s6=new Collect3();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add("Red");
+		list.add("Green");
+		list.add("Blue");
+		String a1="Red";
+		assertEquals(s6.returnfirst(list),a1);
+	}
+	
+	
 }

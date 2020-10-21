@@ -1,8 +1,10 @@
 package com.aish.assignment1;
 
-import java.util.LinkedList;
+import java.util.ArrayList;
 import java.util.Collections;
-
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Random;
 public class Collect3 {
 	public LinkedList<String> elementsposition(LinkedList<String> list) {
 		for (int p = 0; p < list.size(); p++) {
@@ -39,8 +41,10 @@ public class Collect3 {
 	}
 
 	public LinkedList<String> shuffle(LinkedList<String> list) {
-		Collections.shuffle(list);
-		return list;
+		LinkedList<String> listOne = new LinkedList<String>();
+		listOne.addAll(list);
+		Collections.shuffle(listOne);
+		return listOne;
 	}
 
 	public LinkedList<String> join(LinkedList<String> list1, LinkedList<String> list2) {
@@ -67,7 +71,37 @@ public class Collect3 {
 	public LinkedList<String> replace(LinkedList<String> list, String a1) {
 		LinkedList<String> listOne = new LinkedList<String>();
 		listOne.addAll(list);
-		listOne.set(0, a1);
+		listOne.set(1, a1);
 		return listOne;
 	}
+	public String retrivefirst(LinkedList<String> list){
+		String x=list.peekFirst();
+		return x;
+	}
+	public String retrivelast(LinkedList<String> list){
+		String x=list.peekLast();
+		return x;
+	}
+	public boolean elementexists(LinkedList<String> list,String a){
+		if(list.contains(a))
+			return true;
+		else
+			return false;
+		}
+	public List<String> linkedlisttoarraylist(LinkedList<String> list){
+		List<String> aList = new ArrayList<String>(list);
+	    return aList;
+	}
+	public boolean comparelinkedlist(LinkedList<String> list,LinkedList<String> list1){
+		if(list.containsAll(list1))
+		return true;
+		else
+			return false;
+	}
+	public String returnfirst(LinkedList<String> list){
+		String a=list.pop();
+		return a;
+	}
 }
+
+	

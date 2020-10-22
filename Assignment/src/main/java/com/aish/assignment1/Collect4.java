@@ -1,7 +1,11 @@
 package com.aish.assignment1;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.TreeSet;
 
 
 public class Collect4 {
@@ -31,5 +35,26 @@ public class Collect4 {
 		set.isEmpty();
 		return set;
 	}
+	public HashSet<String> clone(HashSet<String> set1) {
+		HashSet<String> set = new HashSet<String>();
+		set.addAll(set1);
+		set.clone();
+		return set;
+	}
+	public Set<String> hashtotree(HashSet<String> set1) {
+		Set<String> tree_set = new TreeSet<String>(set1);
+		return tree_set;
+	}
 
+	public List<String> hashtolist(HashSet<String> set1) {
+		List<String> aList = new ArrayList<String>(set1);
+		return aList;
+	}
+
+	public boolean compare(HashSet<String> set1, HashSet<String> set2) {
+		if (set1.containsAll(set2))
+			return true;
+		else
+			return false;
+	}
 }

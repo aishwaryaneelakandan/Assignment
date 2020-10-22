@@ -57,6 +57,7 @@ class Collect4Test {
 		HashSet<String> set2 = new HashSet<String>();
 		assertEquals(s7.isemptynot(set1), set2);
 	}
+
 	@Test
 	void Clone() {
 		Collect4 s7 = new Collect4();
@@ -70,6 +71,7 @@ class Collect4Test {
 		set2.add("Green");
 		assertEquals(s7.clone(set1), set2);
 	}
+
 	@Test
 	void HashToTree() {
 		Collect4 s7 = new Collect4();
@@ -108,4 +110,54 @@ class Collect4Test {
 		set2.add("Green");
 		assertTrue(s7.compare(set1, set2));
 	}
+
+	@Test
+	void Size() {
+		Collect4 s7 = new Collect4();
+		HashSet<String> set1 = new HashSet<String>();
+		set1.add("Red");
+		set1.add("Blue");
+		set1.add("Green");
+		assertEquals(s7.size(set1), 3);
+	}
+
+	@Test
+	void HashToArray() {
+		Collect4 s7 = new Collect4();
+		HashSet<String> set1 = new HashSet<String>();
+		set1.add("Red");
+		set1.add("Blue");
+		set1.add("Green");
+		String[] a = { "Red", "Blue", "Green" };
+		assertArrayEquals(s7.hashtoarray(set1), a);
+	}
+
+	@Test
+	void RetainAll() {
+		Collect4 s7 = new Collect4();
+		HashSet<String> set1 = new HashSet<String>();
+		set1.add("Red");
+		set1.add("Blue");
+		set1.add("Green");
+		HashSet<String> set2 = new HashSet<String>();
+		set2.add("Red");
+		set2.add("Orange");
+		set2.add("Green");
+		HashSet<String> set3 = new HashSet<String>();
+		set2.add("Red");
+		set2.add("Green");
+		assertEquals(s7.retainall(set1, set2), set3);
+	}
+
+	@Test
+	void RemoveAll() {
+		Collect4 s7 = new Collect4();
+		HashSet<String> set1 = new HashSet<String>();
+		set1.add("Red");
+		set1.add("Blue");
+		set1.add("Green");
+		HashSet<String> set2 = new HashSet<String>();
+		assertEquals(s7.removeall(set1), set2);
+	}
+
 }

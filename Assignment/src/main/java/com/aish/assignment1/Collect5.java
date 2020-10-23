@@ -54,4 +54,48 @@ public class Collect5 {
 		return a;
 	}
 
+	public TreeSet<String> firstlast(TreeSet<String> t1) {
+		TreeSet<String> t2 = new TreeSet<String>();
+		t2.add(t1.first());
+		t2.add(t1.last());
+		return t2;
+	}
+
+	public TreeSet<Integer> lessthan7(TreeSet<Integer> t1) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(t1.lower(7));
+		t2.addAll(t1);
+		return t2;
+	}
+
+	public TreeSet<Integer> graterthanorequal(TreeSet<Integer> t1) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(t1.ceiling(10));
+		return t2;
+	}
+
+	public TreeSet<Integer> lessthanorequal(TreeSet<Integer> t1) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(t1.floor(10));
+		return t2;
+	}
+
+	public TreeSet<Integer> graterthan(TreeSet<Integer> t1) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(t1.higher(10));
+		return t2;
+	}
+
+	public TreeSet<Integer> lowerthan(TreeSet<Integer> t1) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(t1.lower(10));
+		return t2;
+	}
+
+	public TreeSet<Integer> remove(TreeSet<Integer> t1, Integer a) {
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.addAll(t1);
+		t2.remove(a);
+		return t2;
+	}
 }

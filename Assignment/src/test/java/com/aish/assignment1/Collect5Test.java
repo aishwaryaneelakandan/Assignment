@@ -71,6 +71,7 @@ class Collect5Test {
 		t2.add(10);
 		assertEquals(s8.reverse(t1), t2);
 	}
+
 	@Test
 	void Clone() {
 		Collect5 s8 = new Collect5();
@@ -130,5 +131,94 @@ class Collect5Test {
 		int a1 = 30;
 		assertEquals(s8.returnlast(t1), a1);
 	}
-	
+
+	@Test
+	void FirstLast() {
+		Collect5 s8 = new Collect5();
+		TreeSet<String> t1 = new TreeSet<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Blue");
+		TreeSet<String> t2 = new TreeSet<String>();
+		t2.add("Red");
+		t2.add("Blue");
+		assertEquals(s8.firstlast(t1), t2);
+	}
+
+	@Test
+	void Lessthan7() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(1);
+		t1.add(2);
+		t1.add(3);
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(1);
+		t2.add(2);
+		t2.add(3);
+		assertEquals(s8.lessthan7(t1), t2);
+	}
+
+	@Test
+	void Greaterthanequal() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(1);
+		t1.add(2);
+		t1.add(11);
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(11);
+		assertEquals(s8.graterthanorequal(t1), t2);
+	}
+
+	@Test
+	void Lessthanequal() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(18);
+		t1.add(2);
+		t1.add(11);
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(2);
+		assertEquals(s8.lessthanorequal(t1), t2);
+	}
+
+	@Test
+	void HigherThan() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(10);
+		t1.add(2);
+		t1.add(11);
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(11);
+		assertEquals(s8.graterthan(t1), t2);
+	}
+
+	@Test
+	void LowerThan() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(1);
+		t1.add(2);
+		t1.add(11);
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(2);
+		assertEquals(s8.lowerthan(t1), t2);
+	}
+
+	@Test
+	void Remove() {
+		Collect5 s8 = new Collect5();
+		TreeSet<Integer> t1 = new TreeSet<Integer>();
+		t1.add(10);
+		t1.add(20);
+		t1.add(30);
+		int a = 10;
+		TreeSet<Integer> t2 = new TreeSet<Integer>();
+		t2.add(20);
+		t2.add(30);
+		assertEquals(s8.remove(t1, a), t2);
+	}
+
 }

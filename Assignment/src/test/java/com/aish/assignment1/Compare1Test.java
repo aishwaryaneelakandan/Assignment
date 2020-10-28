@@ -2,7 +2,7 @@ package com.aish.assignment1;
 import java.util.List;
 import java.util.Arrays;
 
-import static org.junit.Assert.assertEquals;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
@@ -19,9 +19,10 @@ class Compare1Test {
 		
 	@Test
 	void testCompare() {
+		Collect1 s4=new Collect1();
 		List<String> list1 = Arrays.asList("a","b","c","d","e");
 		List<String> list2 = Arrays.asList("a","b","c","d","e");
-		assertTrue(list1.equals(list2));
+		assertTrue(s4.compare(list1, list2));
 	}
 		@Test
 		void testClear() {
@@ -82,7 +83,7 @@ class Compare1Test {
 			Collect1 s4=new Collect1();
 			List<String> list1 = Arrays.asList("Red","Green","Orange","Pink","Black");
 			String list="Violet";
-			List<String> list2 = Arrays.asList("Red","Green","Violet","Pink","Black");
-			assertEquals(s4.updateArrayList(list1,list),list2);
+			List<String> list2 = Arrays.asList("Red","Violet","Orange","Pink","Black");
+			assertEquals(s4.secondelementArrayList(list1,list),list2);
 }
 }

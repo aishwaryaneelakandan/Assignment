@@ -1,7 +1,6 @@
 package com.aish.assignment1;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Collect1 {
@@ -12,9 +11,11 @@ public class Collect1 {
         return listThree;
 	}
 
-	public List<String> compare(List<String> listOne,List<String> listTwo) {
-		listOne.equals(listTwo);
-		return listOne;
+	public boolean compare(List<String> listOne,List<String> listTwo) {
+	 if(listOne.containsAll(listTwo))
+		return true;
+	 else
+		 return false;
 	}
 
 	public List<Integer> clear1(List<Integer> arr1) {
@@ -81,6 +82,6 @@ public class Collect1 {
 		List<String> listTwo=new ArrayList<String>();
 		listTwo.addAll(selist);
 		listTwo.set(1, a1);
-		return selist;
+		return listTwo;
 	}
 }

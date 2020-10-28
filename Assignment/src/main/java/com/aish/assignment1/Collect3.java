@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Random;
 public class Collect3 {
 	public LinkedList<String> elementsposition(LinkedList<String> list) {
 		for (int p = 0; p < list.size(); p++) {
@@ -102,6 +101,7 @@ public class Collect3 {
 		String a=list.pop();
 		return a;
 	}
+	
 }
 
 	

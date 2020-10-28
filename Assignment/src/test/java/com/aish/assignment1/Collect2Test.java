@@ -1,6 +1,5 @@
 package com.aish.assignment1;
 
-import static org.junit.Assert.assertEquals;
 import static org.junit.jupiter.api.Assertions.*;
 import java.util.LinkedList;
 

@@ -68,4 +68,10 @@ public class Collect7 {
 		Set<Integer> keyset = map.keySet();
 		return keyset;
 	}
+
+	@SuppressWarnings("rawtypes")
+	public Set setview(HashMap<Integer, String> map) {
+		Set map1 = map.entrySet();
+		return map1;
+	}
 }

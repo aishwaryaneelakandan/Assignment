@@ -1,7 +1,6 @@
 package com.aish.assignment1;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -155,5 +154,22 @@ class Collect7Test {
 		map2.add(4);
 		map2.add(5);
 		assertEquals(s10.setvalue(map1), map2);
+	}
+
+	@Test
+	void SetView() {
+		Collect7 s10 = new Collect7();
+		HashMap<Integer, String> map1 = new HashMap<>();
+		map1.put(1, "Red");
+		map1.put(2, "Green");
+		map1.put(3, "Black");
+		map1.put(4, "White");
+		map1.put(5, "Blue");
+		s10.setview(map1);
+		assertEquals(map1.get(1), "Red");
+		assertEquals(map1.get(2), "Green");
+		assertEquals(map1.get(3), "Black");
+		assertEquals(map1.get(4), "White");
+		assertEquals(map1.get(5), "Blue");
 	}
 }

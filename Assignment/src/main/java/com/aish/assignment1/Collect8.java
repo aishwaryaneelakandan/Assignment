@@ -120,4 +120,61 @@ public class Collect8 {
 		tree1.tailMap(20, false);
 		return tree1;
 	}
+
+	public TreeMap<Integer, String> firstlowestlasthighest(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.firstKey();
+		tree1.lastKey();
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> desecendingkey(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.putAll(tree);
+		tree1.descendingKeySet();
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> greatestkeylessthanorequalto(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.floorKey(10);
+		tree1.putAll(tree);
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> leastkeystrictlygreaterthan(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.higherKey(1);
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> greatestkeystrictlylessthan(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.lowerKey(20);
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> navigableset(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.navigableKeySet();
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> associatedwithleastkey(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.ceilingKey(20);
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> Withleastkey(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.ceilingKey(30);
+		return tree1;
+	}
+
+	public TreeMap<Integer, String> Comparator(TreeMap<Integer, String> tree) {
+		TreeMap<Integer, String> tree1 = new TreeMap<Integer, String>();
+		tree1.floorKey(10);
+		return tree1;
+	}
 }

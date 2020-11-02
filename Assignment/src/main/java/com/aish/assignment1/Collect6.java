@@ -41,4 +41,43 @@ public class Collect6 {
 		return array_list;
 	}
 
+	public boolean display(PriorityQueue<String> t1, PriorityQueue<String> t2) {
+		if (t2.addAll(t1))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean iterate(PriorityQueue<String> t1, PriorityQueue<String> t2) {
+		if (t2.addAll(t1))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean insert(PriorityQueue<String> t1, PriorityQueue<String> t2, String a1) {
+		if (t2.offer(a1))
+			return true;
+		else
+			return true;
+	}
+
+	public List<String> queuetostring(PriorityQueue<String> t1) {
+		List<String> array_list = new ArrayList<String>(t1);
+		return array_list;
+	}
+
+	public boolean addall(PriorityQueue<String> t1, PriorityQueue<String> t2) {
+		if (t2.addAll(t1))
+			return true;
+		else
+			return false;
+	}
+
+	public boolean maximumpriority(PriorityQueue<String> t1, PriorityQueue<String> t2) {
+		if (t2.addAll(t1))
+			return true;
+		else
+			return false;
+	}
 }

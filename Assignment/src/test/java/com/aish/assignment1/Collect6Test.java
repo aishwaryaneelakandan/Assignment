@@ -82,4 +82,89 @@ class Collect6Test {
 		assertEquals(s9.queuetoarray(set1), t1);
 	}
 
+	@Test
+	void Display() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> t1 = new PriorityQueue<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Blue");
+		PriorityQueue<String> t2 = new PriorityQueue<String>();
+		t2.add("Blue");
+		t2.add("Red");
+		t2.add("Green");
+		assertTrue(s9.display(t1, t2));
+	}
+
+	@Test
+	void Iterate() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> t1 = new PriorityQueue<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Blue");
+		PriorityQueue<String> t2 = new PriorityQueue<String>();
+		t2.add("Blue");
+		t2.add("Red");
+		t2.add("Green");
+		assertTrue(s9.display(t1, t2));
+	}
+
+	@Test
+	void Insert() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> t1 = new PriorityQueue<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Black");
+		t1.add("White");
+		String a1 = "Blue";
+		PriorityQueue<String> t2 = new PriorityQueue<String>();
+		t2.add("Black");
+		t2.add("Blue");
+		t2.add("Red");
+		t2.add("Green");
+		t2.add("White");
+		assertTrue(s9.insert(t1, t2, a1));
+	}
+
+	@Test
+	void QueueToString() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> set1 = new PriorityQueue<String>();
+		set1.add("Red");
+		set1.add("Green");
+		set1.add("Black");
+		set1.add("White");
+		List<String> t1 = Arrays.asList("Black", "Red", "Green", "White");
+		assertEquals(s9.queuetoarray(set1), t1);
+	}
+
+	@Test
+	void AddAll() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> t1 = new PriorityQueue<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Blue");
+		PriorityQueue<String> t2 = new PriorityQueue<String>();
+		t2.add("Blue");
+		t2.add("Red");
+		t2.add("Green");
+		assertTrue(s9.addall(t1, t2));
+	}
+
+	@Test
+	void MaximumPriority() {
+		Collect6 s9 = new Collect6();
+		PriorityQueue<String> t1 = new PriorityQueue<String>();
+		t1.add("Red");
+		t1.add("Green");
+		t1.add("Blue");
+		PriorityQueue<String> t2 = new PriorityQueue<String>();
+		t2.add("Blue");
+		t2.add("Red");
+		t2.add("Green");
+		assertTrue(s9.maximumpriority(t1, t2));
+	}
 }

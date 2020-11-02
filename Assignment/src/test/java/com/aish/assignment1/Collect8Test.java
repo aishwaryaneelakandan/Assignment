@@ -247,4 +247,86 @@ class Collect8Test {
 		assertEquals(map1.get(30), "Black");
 		assertEquals(map1.get(40), "White");
 	}
+	@Test
+	void FirstLowestLastHighest() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.firstKey(),1);
+		assertEquals(map1.lastKey(),40);
+	}
+	@Test
+	void DecendingKey() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.lastKey(),40);
+	}
+	@Test
+	void GreatestKeyLessThanOrEualTo() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.floorKey(10),1);
+	}
+	@Test
+	void LeastKeyStrictlyGreaterThan() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.higherKey(1),20);
+	}
+	@Test
+	void GreatestKeyStrictlyLessThan() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.lowerKey(20),1);
+	}
+	@Test
+	void NavigableSet() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.ceilingKey(40),40);
+	}
+	@Test
+	void AssociatedWithLeastKey() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.ceilingKey(20),20);
+	}
+	@Test
+	void WithLeastKey() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.ceilingKey(30),30);
+	}
+	@Test
+	void Comparator() {
+		TreeMap<Integer, String> map1 = new TreeMap<Integer, String>();
+		map1.put(1,"Red");
+		map1.put(20,"Green");
+		map1.put(30, "Black");
+		map1.put(40, "white");
+		assertEquals(map1.floorKey(10),1);
+	}
 }

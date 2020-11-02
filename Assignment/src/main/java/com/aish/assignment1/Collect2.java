@@ -19,18 +19,18 @@ public class Collect2 {
 
 	public Object iteratestarting(LinkedList<String> list) {
 		@SuppressWarnings("rawtypes")
-		Iterator p = list.listIterator(2);
+		Iterator p = list.listIterator(1);
 		while (p.hasNext())
 			 p.next();
-		return p;
+		return list;
 	}
 
 	public Object iteratereverse(LinkedList<String> list) {
-		@SuppressWarnings("rawtypes")
-		Iterator it = list.descendingIterator();
-		while (it.hasNext())
-			  it.next();
-		return it;
+		Iterator<String> itr = list.descendingIterator();
+        while(itr.hasNext()){
+            itr.next();
+        }
+        return list;
 	}
 
 	public LinkedList<String> insertspecified(LinkedList<String> islist, String a1) {

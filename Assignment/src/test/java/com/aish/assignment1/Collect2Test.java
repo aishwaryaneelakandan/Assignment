@@ -115,4 +115,34 @@ public class Collect2Test {
 		list1.add("Orange");
 		assertEquals(s5.getfirstlast(list), list1);
 	}
+	@Test
+	void testInsertstarting() {
+		Collect2 s5=new Collect2();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add( "Apple");
+		list.add( "Orange");
+		list.add("Mango");
+		list.add("Pineapple");
+		list.add("Watermealon");
+		LinkedList<String> list1=new LinkedList<String>();
+		list1.add( "Apple");
+		list1.add("Orange");
+		list1.add("Mango");
+		list1.add("Pineapple");
+		list1.add("Watermealon");
+		assertEquals(s5.iteratestarting(list),list1);
+	}
+	@Test
+	void testInsertreverse() {
+		Collect2 s5=new Collect2();
+		LinkedList<String> list=new LinkedList<String>();
+		list.add( "Mango");
+		list.add( "Orange");
+		list.add("Apple");
+		LinkedList<String> list1=new LinkedList<String>();
+		list1.add("Mango");
+		list1.add("Orange");
+		list1.add("Apple");
+		assertEquals(s5.iteratereverse(list),list1);
+	}
 }

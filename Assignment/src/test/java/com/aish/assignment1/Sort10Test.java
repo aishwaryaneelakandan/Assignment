@@ -21,6 +21,12 @@ class Sort10Test {
 		int n = 16;
 		assertTrue(s10.q2(a, a1, n));
 	}
+	@Test
+	void test3() {
+		Sort10 s10 = new Sort10();
+		int a[] = { 90, 23, 101, 45, 65, 23, 67, 89, 34, 23 };
+		assertArrayEquals(new int[] { 23, 23, 23, 34, 45, 65, 67, 89, 90, 101 }, s10.q3(a));
+	}
 
 	@Test
 	void test4() {
